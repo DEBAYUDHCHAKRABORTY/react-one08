@@ -26,22 +26,37 @@ function InRadChe() {
             setCheck()
         }
     }
+
+    if (inputName === "agree") {
+      setCheck(inputVal);
+    }
   }
 
   return (
     <div>
-      <input type="text" name="myName" placeholder="Enter your Name" onInput={handleBtn}/>
+      <input
+        type="text"
+        name="myName"
+        placeholder="Enter your Name"
+        onInput={handleBtn}
+      />
 
-      <div>
-        <input type="radio" name="food" value="Chicken" onInput={handleBtn} />Chicken
-        <input type="radio" name="food" value="Mutton" onInput={handleBtn} />Mutton
-      </div>
+      <br />
 
-      <input type="checkbox" name="agree" onInput={handleBtn} />Lover
+      <input type="radio" name="food" value="Chicken" onInput={handleBtn} />
+      Chicken
+
+      <input type="radio" name="food" value="Mutton" onInput={handleBtn} />
+      Mutton
+
+      <br />
+
+      <input type="checkbox" name="agree" value="agree" onInput={handleBtn} />
+      agrred
 
       {name && <h3>Your Name is {name}</h3>}
       {rad && <h3>Your fav dish {rad} ? </h3>}
-      {check && <h3>I agree ! I'm a {check} lover</h3>}
+      {check && <h3>I agree ! I'm a {rad} lover</h3>}
 
     </div>
   );
