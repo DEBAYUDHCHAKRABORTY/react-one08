@@ -1,4 +1,7 @@
 import { useState } from "react";
+import RadioCity from "./radioCities";
+
+const radioOptions = ["Delhi", "Mumbai", "Pune", "Kolkata", "Bengaluru"]
 
 function InRadChe() {
   const [name, setName] = useState();
@@ -41,15 +44,19 @@ function InRadChe() {
         onInput={handleBtn}
       />
 
-      <br />
+      
 
-      <input type="radio" name="food" value="Chicken" onInput={handleBtn} />
-      Chicken
+      {/* {radioOptions.map(radio => 
+            <>
+                <input type="radio" name="food" value={radio} onInput={handleBtn} /> {radio}
+            </>
+      )} */}
 
-      <input type="radio" name="food" value="Mutton" onInput={handleBtn} />
-      Mutton
+      {radioOptions.map(radio => 
+            <RadioCity radio={radio} handleBtn={handleBtn} key={radio}/>
+      )}
 
-      <br />
+
 
       <input type="checkbox" name="agree" value="agree" onInput={handleBtn} />
       agrred
