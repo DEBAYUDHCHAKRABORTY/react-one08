@@ -24,5 +24,5 @@ function Add() {
            { <h1>Gender is {gender}</h1>}
         </div>
     )
-}
+}   
 export default Add;
