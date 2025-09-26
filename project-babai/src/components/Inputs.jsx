@@ -21,8 +21,8 @@ export default function Inputs() {
 
     return (
         <div>
-            <input type="text" name="name" placeholder="enter your first name" onInput={handleChange} />
-            <input type="text" vaule="name" placeholder=" enter your last name " onInput={handleChange} />
+            <input type="text" name="babai" placeholder="enter your first name" onInput={handleChange} />
+            <input type="text" name="babaii" placeholder=" enter your last name " onInput={handleChange} />
             <input type="radio" value="color" /> Red
             <input type="radio" value="color" /> Blue
             {name && <h2>Your name is{name} </h2>}
