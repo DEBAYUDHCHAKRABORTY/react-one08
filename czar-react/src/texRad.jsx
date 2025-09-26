@@ -16,22 +16,19 @@ function MultiInput() {
   function handleGame(event) {
     setSports(event.target.value);
   }
-
+  
   return (
     <div>
       <input type="text" placeholder="Enter your Name" onInput={handleName} />
-      <input
-        type="text"
-        placeholder="Enter your bro's Name"
-        onInput={handleName2}
-      />
-      <input type="radio" name="game" onInput={handleGame} value="cricket" />
-      cricket
-      <input type="radio" name="game" onInput={handleGame} value="football" />
-      football
-      {name &&<h3>your name is {name}</h3>}
-      {name2 &&<h3>your bro's name is {name2}</h3>}
-      {sports &&<h3>both loves {sports}</h3>}
+      <input type="text" placeholder="Enter your bro's Name" onInput={handleName2}/>
+      <div className="radio">
+        <input type="radio" name="game" onInput={handleGame} value="cricket" />cricket
+        <input type="radio" name="game" onInput={handleGame} value="football" />football
+      </div>
+
+      {name && <h3>your name is {name}</h3>}
+      {name2 && <h3>your bro's name is {name2}</h3>}
+      {sports && <h3>both loves {sports}</h3>}
     </div>
   );
 }
