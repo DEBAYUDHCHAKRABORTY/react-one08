@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Terad from './textRadio'
 import MultiInput from './texRad'
+import InRadChe from './inRadCheck'
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
     <>
       <Terad/>
       <MultiInput/>
+      <InRadChe/>
     </>
   )
 }
