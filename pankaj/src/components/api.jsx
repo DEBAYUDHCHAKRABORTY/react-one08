@@ -23,7 +23,8 @@ function Call() {
   return (
     <div>
       <h1>Hello</h1>
-      
+
+
       <table>
         <thead>
           <tr>
@@ -33,23 +34,28 @@ function Call() {
             <th>Email</th>
             <th>Phone No</th>
             <th>Zipcode</th>
+            <th>City</th>
+
           </tr>
         </thead>
 
         <tbody>
-        {data.map((itm, idx) => (
-          <tr key={idx}>
-            <td>{itm.id}</td>
-            <td>{itm.username}</td>
-            <td>{itm.name}</td>
-            <td>{itm.email}</td>
-            <td>{itm.phone}</td>
-            <td>{itm.address.zipcode}</td>
-          </tr>
-      ))}
+          {data.map((itm, idx) => (
+            <tr key={idx}>
+              <td>{itm.id}</td>
+              <td>{itm.username}</td>
+              <td>{itm.name}</td>
+              <td>{itm.email}</td>
+              <td>{itm.phone}</td>
+              <td>{itm.address.zipcode}</td>
+              <td>{itm.address.city}</td>
+
+            </tr>
+          ))}
         </tbody>
       </table>
-      
+
+
 
     </div>
 

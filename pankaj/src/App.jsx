@@ -9,17 +9,24 @@ import Greet from './components/comp4'
 import './App.css'
 import FFF from './components/comp3'
 import Call from './components/api'
+import Getdata from './components/api2'
+import Weather from './components/aoi3'
+
 
 function App() {
 
   return (  
     <>
-      <Add/>
+      {/* <Add/>
       <Multi/>
       <FFF/>
       <RadioCity/>
       <InRadChe/>
       <Greet/>
+
+      <Call/> */}
+      {/* <Getdata/> */}
+      <Weather/>
       <Call/>
     </>
   )
