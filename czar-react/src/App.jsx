@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Terad from './textRadio'
-import MultiInput from './texRad'
-import InRadChe from './inRadCheck'
+import MultiInput from './components/texRad'
+import InRadChe from './components/inRadCheck'
 
 function App() {
 
