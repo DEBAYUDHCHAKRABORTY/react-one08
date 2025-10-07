@@ -1,0 +1,65 @@
+import { useState } from "react";
+import RadioCity from "./radio";
+
+const radioOptions = ["Delhi", "Mumbai", "Pune", "Kolkata", "Bengaluru"]
+
+function InRadChe() {
+  const [name, setName] = useState();
+  const [rad, setRad] = useState("");
+  const [check, setCheck] = useState();
+
+  function handleBtn(event) {
+    const inputName = event.target.name;
+    const inputVal = event.target.value;
+
+    if (inputName === "myName") {
+      setName(inputVal);
+    }
+
+    if (inputName === "food") {
+      setRad(inputVal);
+      setCheck(inputVal);
+    }
+
+    if (inputName === "agree") {
+        const isChecked = event.target.checked
+        if(isChecked){
+            setCheck(rad)
+        }else{
+            setCheck()
+        }
+    }
+
+    if (inputName === "agree") {
+      setCheck(inputVal);
+    }
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        name="myName"
+        placeholder="Enter your Name"
+        onInput={handleBtn}
+      />
+
+
+      {radioOptions.map(radio => 
+            <RadioCity radio={radio} handleBtn={handleBtn} key={radio}/>
+      )}
+
+
+
+      <input type="checkbox" name="agree" value="agree" onInput={handleBtn} />
+      agrred
+
+      {name && <h3>Your Name is {name}</h3>}
+      {rad && <h3>Your fav dish {rad} ? </h3>}
+      {check && <h3>I agree ! I'm a {rad} lover</h3>}
+
+    </div>
+  );
+}
+
+export default InRadChe;
