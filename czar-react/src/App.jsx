@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import './App.css'
-import Terad from './textRadio'
-import MultiInput from './texRad'
-import InRadChe from './inRadCheck'
+import MultiInput from './components/texRad'
+import InRadChe from './components/inRadCheck'
+import Weather from './components/weather'
+import Terad from './components/textRadio'
 
 function App() {
 
   return (
     <>
-      <Terad/>
+      {/* <Terad/>
       <MultiInput/>
-      <InRadChe/>
+      <InRadChe/> */}
+      <Weather/>
     </>
   )
 }

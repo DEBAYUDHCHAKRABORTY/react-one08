@@ -12,6 +12,7 @@ import Call from './components/api'
 import Getdata from './components/api2'
 import Weather from './components/aoi3'
 
+
 function App() {
 
   return (  
@@ -22,9 +23,11 @@ function App() {
       <RadioCity/>
       <InRadChe/>
       <Greet/>
+
       <Call/> */}
       {/* <Getdata/> */}
       <Weather/>
+      <Call/>
     </>
   )
 }

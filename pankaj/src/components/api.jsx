@@ -24,6 +24,7 @@ function Call() {
     <div>
       <h1>Hello</h1>
 
+
       <table>
         <thead>
           <tr>
@@ -34,6 +35,7 @@ function Call() {
             <th>Phone No</th>
             <th>Zipcode</th>
             <th>City</th>
+
           </tr>
         </thead>
 
@@ -52,6 +54,7 @@ function Call() {
           ))}
         </tbody>
       </table>
+
 
 
     </div>
