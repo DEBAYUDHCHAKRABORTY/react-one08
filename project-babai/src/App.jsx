@@ -10,6 +10,7 @@ import MyComponent from './components/MyComponents'
 import PracCompo from './components/PracCompo'
 import MultiForm from './components/MultiForm'
 import NewApi from './components/NewAPI'
+import ProjectCompo from './components/Project-compo'
 
 
 
@@ -18,13 +19,14 @@ function App() {
 
   return (
       <>
-    <Inputs/>
+    {/* <Inputs/>
      <Components/>
      <NewComponent/>
      <MyComponent/>
      <PracCompo/>
       <MultiForm/> 
-      <NewApi/>
+      <NewApi/> */}
+      <ProjectCompo/>
     </>
   )
 }
