@@ -34,6 +34,10 @@ export default function components() {
 
             <input type="text" name="nabin" placeholder="Write here your name" onInput={handleChange} />
 
+
+            <input type="radio" name="gender" value = "Male" onInput={handleChange} /> Male
+            <input type="radio" name="gender" value = "Female" onInput={handleChange} /> Female
+
             <input type="radio" name="gender" value = "Male" onInput={handleChange} /> Male
             <input type="radio" name="gender" value = "Female" onInput={handleChange} /> Female
 
