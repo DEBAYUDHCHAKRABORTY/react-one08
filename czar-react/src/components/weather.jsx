@@ -5,6 +5,7 @@ const url =
 
 export default function Weather() {
   const [data, setData] = useState();
+  const[load,setLoad]=useState(true);
 
   useEffect(() => {
     fetchData();
@@ -17,8 +18,15 @@ export default function Weather() {
       const jsonData = await res.json();
       console.log(jsonData);
       setData(jsonData);
+      setLoad(false);
     }
   };
+
+  if(load === true){
+    return(<>
+        <h1>Loading...</h1>
+    </>)
+  }
 
   return (
     <>
