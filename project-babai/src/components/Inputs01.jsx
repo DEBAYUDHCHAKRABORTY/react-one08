@@ -29,8 +29,6 @@ export default function components() {
 
     };
 
-
-
     return (
         <div className="input">
 
@@ -40,8 +38,9 @@ export default function components() {
             <input type="radio" name="gender" value = "Female" onInput={handleChange} /> Female
 
 
-
+            <div>
             <input type="checkbox" name="color" onInput={handleChange}/> Red
+            </div>  
 
             {name && <h2> Your Name is {name} </h2>}
             {gender && <h2>Your gender is {gender}</h2>}
