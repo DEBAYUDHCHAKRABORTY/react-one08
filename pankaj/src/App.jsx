@@ -11,6 +11,7 @@ import Call from './components/api'
 import Getdata from './components/api2'
 import Weather from './components/aoi3'
 import QuoteGenerator from './components/api4'
+import Quote from './components/api5'
 
 
 function App() {
@@ -26,9 +27,10 @@ function App() {
 
       <Call/> */}
       {/* <Getdata/> */}
-      <QuoteGenerator/>
+      {/* <QuoteGenerator/>
       <Weather/>
-      <Call/>
+      <Call/> */}
+      <Quote/>
     </>
   )
 }
