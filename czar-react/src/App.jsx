@@ -4,6 +4,7 @@ import MultiInput from './components/texRad'
 import InRadChe from './components/inRadCheck'
 import Weather from './components/weather'
 import Terad from './components/textRadio'
+import Btnwtr from './components/wetrbtn'
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
     <>
       {/* <Terad/>
       <MultiInput/>
-      <InRadChe/> */}
-      <Weather/>
+      <InRadChe/> 
+      <Weather/>*/}
+      <Btnwtr/>
     </>
   )
 }
