@@ -11,6 +11,9 @@ import PracCompo from './components/PracCompo'
 import MultiForm from './components/MultiForm'
 import NewApi from './components/NewAPI'
 import ProjectCompo from './components/Project-compo'
+import ColorPicker from './components/ColorPicker'
+import InputColor from './components/InputColor'
+
 
 
 
@@ -26,7 +29,10 @@ function App() {
      <PracCompo/>
       <MultiForm/> 
       <NewApi/> */}
-      <ProjectCompo/>
+      {/* <ProjectCompo/> */}
+      <ColorPicker/>
+      <InputColor/>
+
     </>
   )
 }
