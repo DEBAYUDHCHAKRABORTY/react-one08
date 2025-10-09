@@ -1,4 +1,6 @@
+ 
 import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Quote() {
     const [quote, setQuote] = useState([]);
@@ -32,6 +34,8 @@ export default function Quote() {
                         <div key={index}>
                             <h2>{item.name}</h2>
                             <h3>{item.email}</h3>
+
+                            <h3>- {item.email}</h3>
                         </div>
                     ))}
                 </div>

@@ -39,6 +39,8 @@ function App() {
       {/* <Color/> */}
       {/* <TextChange/> */}
       <Change/>
+
+      <Quote/>
     </>
   )
 }
