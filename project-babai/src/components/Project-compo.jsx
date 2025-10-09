@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function ProjectCompo() {
 
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
 
 
@@ -24,9 +24,9 @@ export default function ProjectCompo() {
         console.log("Component is working");
     }, [])
 
-    if (loading) {
-        return <h1>Loading...</h1>
-    }
+    // if (loading) {
+    //     return <h1>Loading...</h1>
+    // }
 
 
     return (
