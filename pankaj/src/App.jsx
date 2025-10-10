@@ -11,11 +11,13 @@ import Call from './components/api'
 import Getdata from './components/api2'
 import Weather from './components/aoi3'
 import QuoteGenerator from './components/api4'
-import Quote from './components/api5'
+// import Quote from './components/api5'
 import Userdata from './components/api6'
 import Color from './components/cp'
 import TextChange from './components/butt'
 import Change from './components/single'
+import Greeting from './components/greet'
+
 
 
 function App() {
@@ -38,9 +40,10 @@ function App() {
       {/* <Userdata/> */}
       {/* <Color/> */}
       {/* <TextChange/> */}
-      <Change/>
+      {/* <Change/> */}
+      <Greeting/>
 
-      <Quote/>
+      {/* <Quote/> */}
     </>
   )
 }
