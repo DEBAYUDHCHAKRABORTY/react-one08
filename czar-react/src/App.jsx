@@ -7,7 +7,6 @@ import Terad from './components/textRadio'
 import Btnwtr from './components/wetrbtn'
 import ClrPick from './components/clrpick'
 import BtnClr from './components/btnClr'
-import Emoji from './components/emoji'
 
 function App() {
 
@@ -18,9 +17,8 @@ function App() {
       <InRadChe/> 
       <Weather/>
       <Btnwtr/>
-      <ClrPick/>
-      <BtnClr/>*/}
-      <Emoji/>
+      <ClrPick/>*/}
+      <BtnClr/>
     </>
   )
 }
