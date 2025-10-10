@@ -13,6 +13,7 @@ import NewApi from './components/NewAPI'
 import ProjectCompo from './components/Project-compo'
 import ColorPicker from './components/ColorPicker'
 import InputColor from './components/InputColor'
+import Greetings from './components/Greetings'
 
 
 
@@ -30,8 +31,9 @@ function App() {
       <MultiForm/> 
       <NewApi/> */}
       {/* <ProjectCompo/> */}
-      <ColorPicker/>
-      <InputColor/>
+      {/* <ColorPicker/>
+      <InputColor/> */}
+      <Greetings/>
 
     </>
   )
