@@ -1,45 +1,35 @@
- 
 import { useState } from "react"
-import { useEffect, useState } from "react"
 
-export default function Quote() {
-    const [quote, setQuote] = useState([]);
+export default function Userdata() {
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
-
-    const fetchQuote = async () => {
+    const fetchData = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
         if (response.ok) {
-            const jsonQuote = await response.json();
-            console.log(jsonQuote);
-            setQuote(jsonQuote);
+            const jsonData = await response.json();
+            console.log(jsonData);
+            setData(jsonData);
         }
     };
-
     const handleClick = async (e) => {
         setLoading(true);
-        await fetchQuote();
+        await fetchData();
         setLoading(false);
     }
 
-
     return (
         <div>
-            <h1>Weather Report</h1>
-            <button onClick={handleClick}> Weather</button>
-
+            <h1>Get data from API</h1>
+            <button onClick={handleClick} style={{ color: "blue", background: "yellow" }}>Click Here</button>
             {loading
                 ? <p>Loading...</p>
                 : <div>
-                    {quote.map((item, index) => (
+                    {data.map((item, index) => (
                         <div key={index}>
                             <h2>{item.name}</h2>
-                            <h3>{item.email}</h3>
-
-                            <h3>- {item.email}</h3>
                         </div>
                     ))}
                 </div>
-
             }
         </div>
     );
