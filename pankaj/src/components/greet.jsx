@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 export default function Greeting() {
+
     const [name, setName] = useState("");
     const [color, setColor] = useState("white");
     const [greeting, setGreeting] = useState("");
@@ -23,6 +24,7 @@ export default function Greeting() {
         }
         setColor(getRandomColor());
         setGreeting(`Hello ${name}! How are you?`);
+        console.log(greeting);
     }
 
 
@@ -36,5 +38,6 @@ export default function Greeting() {
             {greeting && <h4 style={{color:"black"}}>{greeting}</h4>}
         </div>
 
-    </>)
+    </>
+    );
 }
