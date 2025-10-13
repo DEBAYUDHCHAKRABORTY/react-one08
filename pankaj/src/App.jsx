@@ -17,13 +17,68 @@ import Color from './components/cp'
 import TextChange from './components/butt'
 import Change from './components/single'
 import Greeting from './components/greet'
+import Signup from './components/signup'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/homepage'
+import Login from './components/login'
 
 
 
 function App() {
 
-  return (  
+  return (
     <>
+      <Routes >
+        <Route path="/" element={<HomePage />} />
+        <Route path="/comp1" element={<Add />} />
+        <Route path="/comp2" element={<Multi />} />
+        <Route path="/Radiocheck" element={<InRadChe />} />
+        <Route path="/comp4" element={<Greet />} />
+        <Route path="/comp3" element={<FFF />} />
+        <Route path="/api" element={<Call />} />
+        <Route path="/api2" element={<Getdata />} />
+        <Route path="/aoi3" element={<Weather />} />
+        <Route path="/api4" element={<QuoteGenerator />} />
+        <Route path="/api6" element={<Userdata />} />
+        <Route path="/cp" element={<Color />} />
+        <Route path="/butt" element={<TextChange />} />
+        <Route path="/single" element={<Change />} />
+        <Route path="/greet" element={<Greeting />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+
+      </Routes>
+
+
+
+
+
+
+
+
+
+      {/* 
+      <Multi />
+      <FFF />
+      <RadioCity />
+      <InRadChe />
+      <Greet />
+
+      <Call />
+      <Getdata />
+      <QuoteGenerator />
+      <Weather />
+      <Call />
+      <Quote />
+      <Userdata />
+      <Color />
+      <TextChange />
+      <Change />
+      <Greeting />
+      <Login />
+
+      <Quote />
+      <Routes /> */}
       {/* <Add/>
       <Multi/>
       <FFF/>
