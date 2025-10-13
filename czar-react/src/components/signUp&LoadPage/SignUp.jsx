@@ -73,6 +73,7 @@ export default function SignUp() {
     width: "250px",
     borderRadius: "5px",
     backgroundColor: "white",
+    color: "black"
   };
 
   return (
@@ -91,13 +92,7 @@ export default function SignUp() {
           </h2>
           <div style={{ padding: "20px" }}>
             <input
-              style={{
-                color: "black",
-                height: "30px",
-                width: "250px",
-                borderRadius: "5px",
-                backgroundColor: "white",
-              }}
+              style={inputTextStyles}
               type="text"
               value={formvalues.firstName}
               placeholder="ENTER FIRST NAME"
@@ -105,23 +100,17 @@ export default function SignUp() {
               onInput={handlChange}
             />
           </div>
-          <p style={{ color: "red" }}>{formErrors.firstName}</p>
+          <ErrorMsg message={formErrors.firstName} />
           <div>
             <input
-              style={{
-                height: "30px",
-                width: "250px",
-                borderRadius: "5px",
-                backgroundColor: "white",
-              }}
+              style={inputTextStyles}
               type="text"
               placeholder="ENTER LAST NAME"
               name="lastName"
               onInput={handlChange}
             />
           </div>
-          <p style={{ color: "red" }}>{formErrors.lastName}</p>
-
+          <ErrorMsg message={formErrors.lastName} />
           <div>
             <p>
               <b>Select Gender:</b>
@@ -135,23 +124,18 @@ export default function SignUp() {
             <input type="radio" name="gender" onInput={handlChange} />
             OTHERS
           </div>
-          <p style={{ color: "red" }}>{formErrors.gender}</p>
+          <ErrorMsg message={formErrors.gender} />
 
           <div style={{ padding: "20px" }}>
             <input
               type="text"
               placeholder="CONTACT NUMBER"
-              style={{
-                height: "30px",
-                width: "250px",
-                borderRadius: "5px",
-                backgroundColor: "white",
-              }}
+              style={inputTextStyles}
               name="contactNumber"
               onInput={handlChange}
             />
           </div>
-          <p style={{ color: "red" }}>{formErrors.contactNumber}</p>
+          <ErrorMsg message={formErrors.contactNumber} />
 
           <div>
             <input
@@ -168,12 +152,7 @@ export default function SignUp() {
             <input
               type="password"
               placeholder="ENTER PASSWORD"
-              style={{
-                height: "30px",
-                width: "250px",
-                borderRadius: "5px",
-                backgroundColor: "white",
-              }}
+              style={inputTextStyles}
               name="password"
               onInput={handlChange}
             />
