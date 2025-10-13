@@ -2,58 +2,73 @@ import { useState } from "react";
 
 export default function SignUp() {
 
-
-
-    const [form, setForm] = useState()
-        firstName=""
-        lastName=""
-        gender=""
-        contactNo=""
-        email=""
-        password=""
-    
-        
-    };
-
+    const [form, setForm] = useState({
+        name: "",
+        gender: "",
+        PhoneNo: "",
+        email: "",
+        password: ""
+    });
 
     function handleNameChange(e) {
-        setForm(e.target.value);
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+        console.log("name Inputs ");
     }
 
+    function handleChange(e) {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+        console.log("gender Inputs ");
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log("Form submitted:", { name, email, password });
-    }
+        console.log("Form Submitted");
+    } 
 
+    
 
 
 
     return (
+        <div className="container">
+            <div className="Header">
+                <div className="Text">
+                    <u><h1>SignUp Page</h1></u>
+                </div>
+                <div className="underline"></div>
 
-        <div>
-            <h1> SignUp Page </h1>
-            <div container type="Form">
-                <input type="text" name="name1" placeholder="Enter your first Name" onInput={handleNameChange} />
-                <input type="text" name="name2" placeholder="Enter Your last Name" onInput={handleNameChange} />
-                <>
+                <div>
+                    <input type="text" name="name" placeholder="Name" onInput={handleNameChange} />
+                </div>
+
                 <p>Genders :</p>
-                <input type="radio" className="gender" name="male" onInput={handleChange} /> Male
-                <input type="radio" className="gender" name="female" onInput={handleChange} /> Female
-                <input type="radio" className="gender" name="other" onInput={handleChange} /> Other
-                </>
-                <input type="number" name="PhoneNo" placeholder="Enter your Contact No" onInput={handleEmailChange} />
-                <input type="email" name="email" placeholder="Enter your Email" onInput={handleEmailChange} />
-                <input type="password" name="password" placeholder="Enter your Password" />
+                <div>
+                    <input type="radio" className="gender" name="gender" value="male" onInput={handleChange} /> Male
+                    <input type="radio" className="gender" name="gender" value="female" onInput={handleChange} /> Female
+                    <input type="radio" className="gender" name="gender" value="other" onInput={handleChange} /> Other
+                </div>
+                
+                <div>
+                    <input type="email" name="email" placeholder="Enter Email" />
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Enter Password" />
+                </div>
+                <div>
+                    <input type="number" name="PhoneNo" placeholder="Enter Phone No" />
+                </div>
 
-
-
+                <div className="submit-container">
                     <button type="submit" onClick={handleSubmit}> Submit </button>
-
-
+                </div>
 
             </div>
-
         </div>
     );
 }

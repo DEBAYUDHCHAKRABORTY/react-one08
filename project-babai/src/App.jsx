@@ -31,14 +31,13 @@ function App() {
      <MyComponent/>
      <PracCompo/>
       <MultiForm/> 
+      <NewApi/>
+      <ProjectCompo/>
+      <ColorPicker/>
+      <InputColor/>
+      <Greetings/>
       <NewApi/> */}
-      {/* <ProjectCompo/> */}
-      {/* <ColorPicker/>
-      <InputColor/> */}
-      {/* <Greetings/> */}
-      {/* <NewApi/> */}
-
-        <SignUp/>    
+      <SignUp/>    
         <Login/>
     </>
   )
