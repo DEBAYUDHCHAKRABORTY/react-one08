@@ -15,7 +15,7 @@ export default function Greeting() {
         return colors[randomIdx];
     }
 
-    function handleSubmit(ç) {
+    function handleSubmit() {
         if (!name.trim()) {
             setGreeting("Name cannot be empty");
             console.log(greeting);
