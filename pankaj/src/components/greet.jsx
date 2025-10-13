@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 export default function Greeting() {
+
     const [name, setName] = useState("");
     const [color, setColor] = useState("white");
     const [greeting, setGreeting] = useState("");
@@ -16,6 +17,8 @@ export default function Greeting() {
     }
 
     function handleSubmit() {
+
+    function handleSubmit(ç) {
         if (!name.trim()) {
             setGreeting("Name cannot be empty");
             console.log(greeting);
@@ -23,6 +26,7 @@ export default function Greeting() {
         }
         setColor(getRandomColor());
         setGreeting(`Hello ${name}! How are you?`);
+        console.log(greeting);
     }
 
 
@@ -37,4 +41,6 @@ export default function Greeting() {
         </div>
 
     </>)
+    </>
+    );
 }

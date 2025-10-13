@@ -23,6 +23,7 @@ import HomePage from './components/homepage'
 import Login from './components/login'
 
 
+
 function App() {
 
   return (
@@ -78,6 +79,26 @@ function App() {
 
       <Quote />
       <Routes /> */}
+      {/* <Add/>
+      <Multi/>
+      <FFF/>
+      <RadioCity/>
+      <InRadChe/>
+      <Greet/>
+
+      <Call/> */}
+      {/* <Getdata/> */}
+      {/* <QuoteGenerator/>
+      <Weather/>
+      <Call/> */}
+      {/* <Quote/> */}
+      {/* <Userdata/> */}
+      {/* <Color/> */}
+      {/* <TextChange/> */}
+      {/* <Change/> */}
+      <Greeting/>
+
+      {/* <Quote/> */}
     </>
   )
 }
