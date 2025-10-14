@@ -16,6 +16,8 @@ export default function Greeting() {
         return colors[randomIdx];
     }
 
+    function handleSubmit() {
+
     function handleSubmit(ç) {
         if (!name.trim()) {
             setGreeting("Name cannot be empty");
@@ -38,6 +40,10 @@ export default function Greeting() {
             {greeting && <h4 style={{color:"black"}}>{greeting}</h4>}
         </div>
 
+<<<<<<< HEAD
+=======
+    </>)
+>>>>>>> main
     </>
     );
 }

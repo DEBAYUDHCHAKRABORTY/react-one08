@@ -14,7 +14,13 @@ import ColorPicker from './components/ColorPicker'
 import InputColor from './components/InputColor'
 import Greetings from './components/Greetings'
 import SignUp from './components/SignUp'  
+<<<<<<< HEAD
 // import Login from './components/Login'
+=======
+import Login from './components/Login'
+
+
+>>>>>>> main
 
 
 function App() {
@@ -29,6 +35,7 @@ function App() {
      <MyComponent/>
      <PracCompo/>
       <MultiForm/> 
+<<<<<<< HEAD
       <NewApi/>
       <ProjectCompo/>
       <ColorPicker/>
@@ -37,6 +44,17 @@ function App() {
       <NewApi/> */}
       <SignUp/>    
         {/* <Login/> */}
+=======
+      <NewApi/> */}
+      {/* <ProjectCompo/> */}
+      {/* <ColorPicker/>
+      <InputColor/> */}
+      {/* <Greetings/> */}
+      {/* <NewApi/> */}
+
+        <SignUp/>    
+        <Login/>
+>>>>>>> main
     </>
   )
 }
