@@ -1,14 +1,10 @@
 import { useState } from "react";
+import "./SignUp.css";
 
 export default function SignUp() {
 
-    const [form, setForm] = useState({
-        name: "",
-        gender: "",
-        PhoneNo: "",
-        email: "",
-        password: ""
-    });
+    const [action, setAction] = useState("signUp");
+   
 
     function handleNameChange(e) {
         setForm({
@@ -26,12 +22,6 @@ export default function SignUp() {
         console.log("gender Inputs ");
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log("Form Submitted");
-    } 
-
-    
 
 
 
@@ -39,35 +29,41 @@ export default function SignUp() {
         <div className="container">
             <div className="Header">
                 <div className="Text">
-                    <u><h1>SignUp Page</h1></u>
+                    <h1>{action}</h1>
                 </div>
-                <div className="underline"></div>
+                <div className="inputs"></div>
 
-                <div>
+                
+                <div className="input">
+                    {/* <img src={nameIcon} alt="" /> */}
                     <input type="text" name="name" placeholder="Name" onInput={handleNameChange} />
                 </div>
 
                 <p>Genders :</p>
-                <div>
+                <div className="input">
                     <input type="radio" className="gender" name="gender" value="male" onInput={handleChange} /> Male
                     <input type="radio" className="gender" name="gender" value="female" onInput={handleChange} /> Female
                     <input type="radio" className="gender" name="gender" value="other" onInput={handleChange} /> Other
                 </div>
-                
-                <div>
+
+                <div className="input">
+                    {/* <img src={emailIcon} alt="" /> */}
                     <input type="email" name="email" placeholder="Enter Email" />
                 </div>
-                <div>
+                <div className="input">
+                    {/* <img src={passwordIcon} alt="" /> */}
                     <input type="password" name="password" placeholder="Enter Password" />
                 </div>
-                <div>
+                <div className="input">
+                    {/* <img src={phoneIcon} alt="" /> */}
                     <input type="number" name="PhoneNo" placeholder="Enter Phone No" />
-                </div>
+                </div >
+                <div className="forgot-password">Forgot password? <span>Click Here</span></div>
 
                 <div className="submit-container">
-                    <button type="submit" onClick={handleSubmit}> Submit </button>
+                    <div className={action=== "logIn" ? "submit gray" : "submit"} onClick={()=>{setAction("LogIn")}}> LogIn </div>
+                    <div className={action=== "signUp" ? "submit gray" : "submit"}onClick={()=>{setAction("SignUp")}}>  SingUp</div> 
                 </div>
-
             </div>
         </div>
     );

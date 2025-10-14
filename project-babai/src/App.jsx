@@ -14,9 +14,7 @@ import ColorPicker from './components/ColorPicker'
 import InputColor from './components/InputColor'
 import Greetings from './components/Greetings'
 import SignUp from './components/SignUp'  
-import Login from './components/Login'
-
-
+// import Login from './components/Login'
 
 
 function App() {
@@ -38,7 +36,7 @@ function App() {
       <Greetings/>
       <NewApi/> */}
       <SignUp/>    
-        <Login/>
+        {/* <Login/> */}
     </>
   )
 }
