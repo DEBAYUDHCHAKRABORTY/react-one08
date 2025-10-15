@@ -81,11 +81,11 @@ export default function Signup() {
     };
 
     function handleChange(e) {
-        let targetName  = e.target.name;
+        let targetName = e.target.name;
         let targetValue = e.target.value;
 
         if (targetName === "firstName") {
-            setForm({...form, firstName: targetValue})
+            setForm({ ...form, firstName: targetValue })
         }
     }
 
@@ -99,11 +99,11 @@ export default function Signup() {
                     {errors.firstName && <div style={{ color: 'red' }}>{errors.firstName}</div>}
                 </div>
                 <div>
-                    <input style={{ height: '27px', width: '75%', padding: "2px 10px", borderRadius: "5px" }} name="lastName" type="text" placeholder="ENTER LAST NAME" onInput={handleChange}/>
+                    <input style={{ height: '27px', width: '75%', padding: "2px 10px", borderRadius: "5px" }} name="lastName" type="text" placeholder="ENTER LAST NAME" onInput={handleChange} />
                     {errors.lastName && <div style={{ color: "red" }}>{errors.lastName}</div>}
                 </div>
                 <div style={{ padding: '27px' }}>
-                    <input type="text" placeholder="CONTACT NUMBER" style={{ height: '30px', width: '82%', padding: "2px 10px", borderRadius: "5px" }} name="contactNumber" onInput={handleChange}/>
+                    <input type="text" placeholder="CONTACT NUMBER" style={{ height: '30px', width: '82%', padding: "2px 10px", borderRadius: "5px" }} name="contactNumber" onInput={handleChange} />
                     {errors.contactNumber && <div style={{ color: "red" }}>{errors.contactNumber} </div>}
                 </div>
                 <div>
@@ -120,11 +120,11 @@ export default function Signup() {
                 </div>
 
                 <div>
-                    <input type="text" placeholder="EMAIL" style={{ height: '30px', width: '76%', padding: "2px 10px", borderRadius: "5px" }} />
+                    <input type="text" placeholder="EMAIL" style={{ height: '30px', width: '76%', padding: "2px 10px", borderRadius: "5px" }} name="email" onInput={handleChange}/>
                     {errors.emailId && <div style={{ color: "red" }}>{errors.emailId}</div>}
                 </div >
                 <div style={{ padding: '27px' }}>
-                    <input type="password" placeholder="ENTER PASSWORD" style={{ height: '30px', width: '83%', padding: "2px 10px", borderRadius: "5px" }} />
+                    <input type="password" placeholder="ENTER PASSWORD" style={{ height: '30px', width: '83%', padding: "2px 10px", borderRadius: "5px"  }} name="password" onInput={handleChange} />
                     {errors.passWord && <div style={{ color: "red" }}>{errors.passWord}</div>}
                 </div>
                 <div >
