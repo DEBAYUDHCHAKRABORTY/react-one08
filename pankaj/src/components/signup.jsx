@@ -81,6 +81,12 @@ export default function Signup() {
     };
 
     function handleChange(e) {
+        let targetName = e.target.name;
+        let targetValue = e.target.value;
+
+        if (targetName === "firstName") {
+            setForm({ ...form, firstName: targetValue })
+
         let targetName  = e.target.name;
         let targetValue = e.target.value;
 
@@ -99,6 +105,11 @@ export default function Signup() {
                     {errors.firstName && <div style={{ color: 'red' }}>{errors.firstName}</div>}
                 </div>
                 <div>
+                    <input style={{ height: '27px', width: '75%', padding: "2px 10px", borderRadius: "5px" }} name="lastName" type="text" placeholder="ENTER LAST NAME" onInput={handleChange} />
+                    {errors.lastName && <div style={{ color: "red" }}>{errors.lastName}</div>}
+                </div>
+                <div style={{ padding: '27px' }}>
+                    <input type="text" placeholder="CONTACT NUMBER" style={{ height: '30px', width: '82%', padding: "2px 10px", borderRadius: "5px" }} name="contactNumber" onInput={handleChange} />
                     <input style={{ height: '27px', width: '75%', padding: "2px 10px", borderRadius: "5px" }} name="lastName" type="text" placeholder="ENTER LAST NAME" onInput={handleChange}/>
                     {errors.lastName && <div style={{ color: "red" }}>{errors.lastName}</div>}
                 </div>
@@ -120,6 +131,11 @@ export default function Signup() {
                 </div>
 
                 <div>
+                    <input type="text" placeholder="EMAIL" style={{ height: '30px', width: '76%', padding: "2px 10px", borderRadius: "5px" }} name="email" onInput={handleChange}/>
+                    {errors.emailId && <div style={{ color: "red" }}>{errors.emailId}</div>}
+                </div >
+                <div style={{ padding: '27px' }}>
+                    <input type="password" placeholder="ENTER PASSWORD" style={{ height: '30px', width: '83%', padding: "2px 10px", borderRadius: "5px"  }} name="password" onInput={handleChange} />
                     <input type="text" placeholder="EMAIL" style={{ height: '30px', width: '76%', padding: "2px 10px", borderRadius: "5px" }} />
                     {errors.emailId && <div style={{ color: "red" }}>{errors.emailId}</div>}
                 </div >
