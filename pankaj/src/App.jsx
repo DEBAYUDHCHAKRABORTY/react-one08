@@ -21,6 +21,7 @@ import Signup from './components/signup'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './components/homepage'
 import Login from './components/login'
+import Quotes from './components/quotes'
 
 
 
@@ -46,6 +47,8 @@ function App() {
         <Route path="/greet" element={<Greeting />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/quotes" element={<Quotes />} />
+
 
       </Routes>
 
