@@ -9,6 +9,7 @@ export default function SignUp() {
     password: "",
     contactNumber: "",
     gender: "",
+    confirmPassword: "",
   };
 
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function SignUp() {
 
   function saveData() {
     let registrations = JSON.parse(localStorage.getItem("registrations")) || [];
-    registrations.push(isSubmit);
+    registrations.push(formvalues);
     localStorage.setItem("registrations", JSON.stringify(registrations));
     alert("Registration Done");
   }
@@ -32,10 +33,10 @@ export default function SignUp() {
     e.preventDefault();
     let errors = validate(formvalues);
     setFormErrors(errors);
-    let containsError = Object.keys(errors).length === 0
+    let containsError = Object.keys(errors).length != 0;
     if (containsError) return;
-    saveData()
-    navigate("/login")
+    saveData();
+    navigate("/login");
   }
 
   function validate(values) {
@@ -65,16 +66,36 @@ export default function SignUp() {
       errors.gender = "*Gender is required";
     }
 
+    if (!values.confirmPassword) {
+      errors.confirmPassword = "*Firstly Enter Password";
+    }
+
+    if (values.confirmPassword !== values.password) {
+      errors.confirmPassword = "*Passowrd is not correct";
+    }
+
     return errors;
   }
 
   const inputTextStyles = {
     height: "30px",
-    width: "250px",
+    width: "300px",
     borderRadius: "5px",
     backgroundColor: "white",
+<<<<<<< HEAD
+    color: "black",
+=======
     color: "black"
+>>>>>>> aa5e34ae1c5237dbf0b77e8f3bc63553dd1495e5
   };
+
+  function ErrorMsg({ message }) {
+    return (
+      <>
+        <p style={{ color: "red" }}>{message}</p>
+      </>
+    );
+  }
 
   return (
     <>
@@ -83,7 +104,7 @@ export default function SignUp() {
           style={{
             backgroundColor: "#FFCF71",
             borderRadius: "10px",
-            width: "400px",
+            width: "500px",
             padding: "20px",
           }}
         >
@@ -159,23 +180,24 @@ export default function SignUp() {
             <ErrorMsg message={formErrors.password} />
           </div>
 
+          <div tyle={{ padding: "20px" }}>
+            <input
+              type="password"
+              placeholder="CONFIRM PASSWORD"
+              style={inputTextStyles}
+              name="confirmPassword"
+              onInput={handlChange}
+            />
+          </div>
+          <ErrorMsg message={formErrors.confirmPassword} />
+
           <div>
-            <button
-              type="submit"
-              style={{ backgroundColor: "chocolate" }}            >
+            <button type="submit" style={{ backgroundColor: "chocolate" }}>
               SUBMIT
             </button>
           </div>
         </div>
       </form>
-    </>
-  );
-}
-
-function ErrorMsg({ message }) {
-  return (
-    <>
-      <p style={{ color: "red" }}>{message}</p>
     </>
   );
 }
