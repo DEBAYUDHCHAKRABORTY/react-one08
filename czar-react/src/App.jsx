@@ -13,7 +13,7 @@ import { Routes, Route } from "react-router-dom";
 import SignUp from "./components/signUp&LoadPage/SignUp";
 import LogIn from "./components/login/logIn";
 import Success from "./components/success/success";
-import Quotes from "./components/quotes";
+import Quotes from "./components/QUOTES/quotes";
 
 function App() {
   return (
