@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./quotes.scss";
+import { useNavigate } from "react-router-dom";
 
 const quoteEndpoint = "http://localhost:9090/api/v1/quotes";
 
@@ -14,6 +15,7 @@ function Card({ quote }) {
 
 export default function Quotes() {
   const [data, setData] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchQuotes() {
@@ -32,6 +34,11 @@ export default function Quotes() {
     fetchQuotes();
   }, []);
 
+  function handleClick(id) {
+    console.log("Row clicked " + id);
+    navigate(`/quotes/${id}`);
+  }
+
   return (
     <>
       <h1><u>Quotes</u></h1>
@@ -39,7 +46,7 @@ export default function Quotes() {
         <>
           <table className="table">
             <thead>
-              <tr>
+              <tr id="heading">
                 <th>Index</th>
                 <th>Quotes</th>
                 <th>Author</th>
@@ -47,17 +54,16 @@ export default function Quotes() {
             </thead>
             <tbody>
               {data.map((itm,idx) => (
-                  <tr key={idx}>
-                      <td>{idx+1}</td>
-                      <td>{itm.quote}</td>
-                      <td>{itm.author}</td>
+                  <tr key={idx} onClick={() => handleClick(itm.id)}>
+                      <td id="index">{idx+1}</td>
+                      <td id="quotes">{itm.quote}</td>
+                      <td id="author">{itm.author}</td>
                   </tr>
               ))}
             </tbody>
           </table>
         </>
       )}
-      {JSON.stringify(data)}
 
     </>
   );

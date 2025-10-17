@@ -1,3 +1,23 @@
-.table{
-    
+.table,
+th,
+td {
+    border: 1px solid #ccc;
+    border-color: black;
+    padding: 15px;
+}
+
+#index{
+    background-color: #F8FAB4;
+}
+
+#quotes{
+    background-color: #FFC7A7;
+}
+
+#author{
+    background-color: #CBDCEB;
+}
+
+#heading{
+    background-color: #CBDCEB;
 }
