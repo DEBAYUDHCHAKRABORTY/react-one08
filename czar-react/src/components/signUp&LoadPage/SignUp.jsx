@@ -82,11 +82,7 @@ export default function SignUp() {
     width: "300px",
     borderRadius: "5px",
     backgroundColor: "white",
-<<<<<<< HEAD
     color: "black",
-=======
-    color: "black"
->>>>>>> aa5e34ae1c5237dbf0b77e8f3bc63553dd1495e5
   };
 
   function ErrorMsg({ message }) {
