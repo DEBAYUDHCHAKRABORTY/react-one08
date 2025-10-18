@@ -23,7 +23,7 @@ import HomePage from './components/homepage'
 import Login from './components/login'
 import Quotes from './components/quotes'
 import Usedata from './components/api7'
-
+import QuoteDetail from './components/quotesDetail'
 
 
 function App() {
@@ -49,6 +49,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/quotes" element={<Quotes />} />
+        <Route path="/quotes/:id" element={<QuoteDetail />} />
+
         <Route path="/users" element={<Usedata />} />
 
 

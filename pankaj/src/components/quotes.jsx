@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./style.scss"
-
+import { useNavigate } from "react-router-dom";
 
 
 const quoteEndpoint = "http://localhost:9090/api/v1/quotes"
@@ -16,6 +16,7 @@ function Card({ quote }) {
 
 export default function Quotes() {
     const [data, setData] = useState();
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -34,7 +35,12 @@ export default function Quotes() {
         }
 
         fetchQuotes();
-    }, [])
+    }, []);
+    function handleClick(id) {
+        console.log("Raw Clicked " + id);
+        navigate(`/quotes/${id}`);
+
+    }
 
     return (
         <>
@@ -53,11 +59,11 @@ export default function Quotes() {
                     {data && (
                         <>
                             {data.map((item, idx) => (
-                                <tr key={idx}>
+                                <tr key={idx} onClick={() => handleClick(item.id)}>
                                     {/* <Card quote={item}/> */}
-                                    <td>{idx + 1}</td>
-                                    <td>{item.quote}</td>
-                                    <td>{item.author}</td>
+                                    <td id="index">{idx + 1}</td>
+                                    <td id="quotes">{item.quote}</td>
+                                    <td id="author">{item.author}</td>
 
                                 </tr>))
 
