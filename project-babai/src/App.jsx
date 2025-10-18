@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 import Inputs from './components/Inputs'
 import Components from './components/Inputs01' 
 import NewComponent from './components/NewComponent' 
@@ -13,8 +13,9 @@ import ProjectCompo from './components/Project-compo'
 import ColorPicker from './components/ColorPicker'
 import InputColor from './components/InputColor'
 import Greetings from './components/Greetings'
-import SignUp from './components/SignUp'  
+// import SignUp from './components/SignUp'  
 // import Login from './components/Login'
+import Quotes from './components/QuoteApi'
 
 
 function App() {
@@ -35,8 +36,9 @@ function App() {
       <InputColor/>
       <Greetings/>
       <NewApi/> */}
-      <SignUp/>    
-        {/* <Login/> */}
+      {/* <SignUp/>     */}
+      {/* <Login/> */}
+      <Quotes/>
     </>
   )
 }

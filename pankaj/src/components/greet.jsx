@@ -16,17 +16,18 @@ export default function Greeting() {
         return colors[randomIdx];
     }
 
-    function handleSubmit() {
-
-    function handleSubmit(ç) {
+    function handleSubmit(e) {
+        if (e && typeof e.preventDefault === "function") e.preventDefault();
         if (!name.trim()) {
             setGreeting("Name cannot be empty");
-            console.log(greeting);
+            console.log("Name cannot be empty");
             return;
         }
-        setColor(getRandomColor());
-        setGreeting(`Hello ${name}! How are you?`);
-        console.log(greeting);
+        const newColor = getRandomColor();
+        setColor(newColor);
+        const message = `Hello ${name}! How are you?`;
+        setGreeting(message);
+        console.log(message);
     }
 
 
@@ -40,10 +41,6 @@ export default function Greeting() {
             {greeting && <h4 style={{color:"black"}}>{greeting}</h4>}
         </div>
 
-<<<<<<< HEAD
-=======
-    </>)
->>>>>>> main
     </>
     );
 }
