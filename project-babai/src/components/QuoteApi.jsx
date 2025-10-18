@@ -31,19 +31,16 @@ export default function Quotes() {
         fetchQuotes();
     }, []);
 
-    return (
+    return
         <>
             <h1>Quotes API</h1>
 
             {data && (
                 <>
-                    {/* <h1>Quotes : {data.quote}</h1>
-                    <h2>Author : {data.author}</h2> */}
-
                     <table>
                         <thead>
                             <tr>
-                                <th>Id </th>
+                                <th> Id </th>
                                 <th> Quote </th>
                                 <th> Author </th>
                             </tr>
