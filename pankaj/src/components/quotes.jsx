@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import "./style.scss"
+
 
 
 const quoteEndpoint = "http://localhost:9090/api/v1/quotes"
 
 
-function Card ({quote}) {
+function Card({ quote }) {
     return (<>
         <h2>{quote.quote}</h2>
         <h4> -  By {quote.author}</h4>
@@ -35,13 +37,41 @@ export default function Quotes() {
     }, [])
 
     return (
-        <>{data && (
-            <>
-                {data.map((item, idx) => (
-                    <Card quote={item}/>))
-                }
-            </>
-        )} </>
+        <>
+            <h1><u>Get data</u></h1>
+            <table >
+                <thead >
+                    <tr>
+
+                        <th>Index</th>
+                        <th>Quotes </th>
+                        <th>Author</th>
+
+                    </tr>
+                </thead>
+                <tbody >
+                    {data && (
+                        <>
+                            {data.map((item, idx) => (
+                                <tr key={idx}>
+                                    {/* <Card quote={item}/> */}
+                                    <td>{idx + 1}</td>
+                                    <td>{item.quote}</td>
+                                    <td>{item.author}</td>
+
+                                </tr>))
+
+
+                            }
+
+                        </>
+
+                    )}
+                </tbody>
+            </table>
+        </>
+
     );
+
 
 }

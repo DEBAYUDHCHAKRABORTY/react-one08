@@ -22,6 +22,7 @@ import { Routes, Route } from 'react-router-dom'
 import HomePage from './components/homepage'
 import Login from './components/login'
 import Quotes from './components/quotes'
+import Usedata from './components/api7'
 
 
 
@@ -48,6 +49,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/quotes" element={<Quotes />} />
+        <Route path="/users" element={<Usedata />} />
+
+
 
 
       </Routes>
@@ -99,7 +103,7 @@ function App() {
       {/* <Color/> */}
       {/* <TextChange/> */}
       {/* <Change/> */}
-      <Greeting/>
+      <Greeting />
 
       {/* <Quote/> */}
     </>
