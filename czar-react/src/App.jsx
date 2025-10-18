@@ -34,7 +34,6 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/quotes" element={<Quotes/>}/>
         <Route path="/quotes/:id" element={<QuoteDetail/>}/>
-
         <Route path="/colortext" element={<BtnClr/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
