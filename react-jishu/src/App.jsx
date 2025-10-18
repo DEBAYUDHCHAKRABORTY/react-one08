@@ -3,9 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Rong from './component/Colour'
-// import Sports from './component/From'
-// import Pubg from './component/Game'
-
+import Emoji from './component/Emoj'
+import Pubg from './component/Game'
+import SignUp from './component/Sign'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,7 +13,10 @@ function App() {
     <>
       {/* <Sports/>
       <Pubg/> */}
-      <Rong/>
+      {/* <Rong/> */}
+      {/* <Emoji/> */}
+      {/* <GreetingApp/> */}
+      <SignUp />
     </>
   )
 }

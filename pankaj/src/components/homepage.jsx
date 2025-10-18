@@ -5,6 +5,7 @@ export default function HomePage() {
         <ol>
 
             <li><Link to="/quotes" > Get Quotes </Link></li>
+            <li><Link to="/users" > Show User Data </Link></li>
             <li><Link to="/comp1" > Add </Link></li>
             <li><Link to="/comp2" > Multi</Link></li>
             <li><Link to="/Radiocheck" > InRadChe</Link></li>
@@ -21,6 +22,7 @@ export default function HomePage() {
             <li><Link to="/greet" > Greeting</Link></li>
             <li><Link to="/signup" > Signup</Link></li>
             <li><Link to="/login" > Login</Link></li>
+
 
 
         </ol>
