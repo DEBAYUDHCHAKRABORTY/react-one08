@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./quoteDtl.scss";
 
-const img = "http://localhost:9090/api/v1/quotes/5";
+const quotesURL = "http://localhost:9090/api/v1/quotes";
 
 export default function QuoteDetail() {
   const { id } = useParams();
@@ -11,7 +11,7 @@ export default function QuoteDetail() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch(img);
+        const response = await fetch(`${quotesURL}/${id}`);
         if (response.ok) {
           const jsonData = await response.json();
           setData(jsonData);
@@ -32,12 +32,12 @@ export default function QuoteDetail() {
 
       {data && (
         <>
-          <div className="details">
+          <div className="details" style={{backgroundImage: `url(${data.bgImage})`, width: '800px', height:'600px'}}>
             <div className="text">
               <h2>{data.quote}</h2>
-              <h3>-BY{data.author}</h3>
+              <h3>-By {data.author}</h3>
             </div>
-          <img src={data.bgImage} />
+            {/* <img src={data.bgImage} /> */}
           </div>
         </>
       )}
