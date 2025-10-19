@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './SignUp.scss';
-import 
+
 
 
 export default function SignUp() {
