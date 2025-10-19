@@ -8,6 +8,8 @@ export default function HomePage() {
       <Link to="/signup"><h2>Sign Up</h2></Link>
       <br/>
       <Link to="/quotes"><h2>Quotes</h2></Link>
+      <br/>
+      <Link to="users"><h2>Users</h2></Link>
     </>
   );
 }
