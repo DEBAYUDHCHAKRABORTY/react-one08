@@ -23,7 +23,7 @@ export default function NewApi() {
         console.log("API mounted");
     }, [])
 
-    if (loading) { 
+    if (loading) {
         return <h1>Loading...</h1>
     }
 
@@ -64,5 +64,5 @@ export default function NewApi() {
             {JSON.stringify(data)}
 
         </>
-    )
+    );
 }
