@@ -27,7 +27,10 @@ function SignUp() {
                     <input type="text" name="lastName" placeholder="Last Name" onInput={handleChange} />
                 </div>
                 <div>
-                    <input type="text" name="Gender" placeholder="Gender" onInput={handleChange} />
+                    <input type="radio" name="Gender" onInput={handleChange} value="Male" />Male
+                    <input type="radio" name="Gender" onInput={handleChange} value="Female"/>Female
+                    <input type="radio" name="Gender" onInput={handleChange} value="Other"/>Other
+                    
                 </div>
                 <div>
                     <input type="text" name="Contact Number" placeholder="Contact" onInput={handleChange} />
@@ -36,7 +39,7 @@ function SignUp() {
                     <input type="text" name="Email" placeholder="Email" onInput={handleChange} />
                 </div>
                 <div>
-                    <input type="text" name="Password" placeholder="Password" onInput={handleChange} />
+                    <input type="password" name="Password" placeholder="Password" onInput={handleChange} />
                 </div>
                 <button onClick={handleSubmit}>Submit</button>
             </div>
