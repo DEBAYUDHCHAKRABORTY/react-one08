@@ -24,6 +24,8 @@ import Login from './components/login'
 import Quotes from './components/quotes'
 import Usedata from './components/api7'
 import QuoteDetail from './components/quotesDetail'
+import Info from './components/Users/users'
+import Adduser from './components/Users/adduser'
 
 
 function App() {
@@ -50,8 +52,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/quotes" element={<Quotes />} />
         <Route path="/quotes/:id" element={<QuoteDetail />} />
-
         <Route path="/users" element={<Usedata />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/adduser" element={<Adduser />} />
+
 
 
 
