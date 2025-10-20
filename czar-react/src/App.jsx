@@ -15,6 +15,8 @@ import LogIn from "./components/login/logIn";
 import Success from "./components/success/success";
 import Quotes from "./components/QUOTES/quotes";
 import QuoteDetail from "./components/QUOTES/quoteDetails";
+import FrntPg from "./components/USERS/frontPage";
+import AddUsers from "./components/USERS/addUsers";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/users" element={<FrntPg/>}/>
+        <Route path="/users/:addUser" element={<AddUsers/>}/>
       </Routes>
     </>
   );
