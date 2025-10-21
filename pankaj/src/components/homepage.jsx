@@ -22,6 +22,11 @@ export default function HomePage() {
             <li><Link to="/greet" > Greeting</Link></li>
             <li><Link to="/signup" > Signup</Link></li>
             <li><Link to="/login" > Login</Link></li>
+            <li><Link to="/info" > Info</Link></li>
+            <li><Link to="/adduser" > Adduser</Link></li>
+
+
+
 
 
 
