@@ -29,9 +29,9 @@ import Adduser from './components/Users/adduser'
 
 
 function App() {
-
   return (
-    <>
+    <div className="container mx-auto px-4">
+
       <Routes >
         <Route path="/" element={<HomePage />} />
         <Route path="/comp1" element={<Add />} />
@@ -55,64 +55,9 @@ function App() {
         <Route path="/users" element={<Usedata />} />
         <Route path="/info" element={<Info />} />
         <Route path="/adduser" element={<Adduser />} />
-
-
-
-
-
       </Routes>
+    </div>
 
-
-
-
-
-
-
-
-
-      {/* 
-      <Multi />
-      <FFF />
-      <RadioCity />
-      <InRadChe />
-      <Greet />
-
-      <Call />
-      <Getdata />
-      <QuoteGenerator />
-      <Weather />
-      <Call />
-      <Quote />
-      <Userdata />
-      <Color />
-      <TextChange />
-      <Change />
-      <Greeting />
-      <Login />
-
-      <Quote />
-      <Routes /> */}
-      {/* <Add/>
-      <Multi/>
-      <FFF/>
-      <RadioCity/>
-      <InRadChe/>
-      <Greet/>
-
-      <Call/> */}
-      {/* <Getdata/> */}
-      {/* <QuoteGenerator/>
-      <Weather/>
-      <Call/> */}
-      {/* <Quote/> */}
-      {/* <Userdata/> */}
-      {/* <Color/> */}
-      {/* <TextChange/> */}
-      {/* <Change/> */}
-      <Greeting />
-
-      {/* <Quote/> */}
-    </>
   )
 }
 

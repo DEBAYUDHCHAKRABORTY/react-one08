@@ -20,7 +20,7 @@ export default function Usedata() {
     }
 
     return (
-        <div>
+        <div className = " max-w-xl mx-auto px-4 bg-red bg-red-50">
             <h1>Get Data from API</h1>
             <button onClick={handleClick} style={{ color: "black", background: "blue" }}>Click Here</button>
             {loading

@@ -33,15 +33,15 @@ function App() {
       {/* {<SignUp/>} */}
       {/* <LogIn/> */}
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/quotes" element={<Quotes/>}/>
-        <Route path="/quotes/:id" element={<QuoteDetail/>}/>
-        <Route path="/colortext" element={<BtnClr/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/colortext" element={<BtnClr />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/success" element={<Success />} />
-        <Route path="/users" element={<FrntPg/>}/>
-        <Route path="/users/:addUser" element={<AddUsers/>}/>
+        <Route path={QUOTE_PATH} element={<Quotes />}></Route>
+        <Route path={QUOTE_DETAIL_PATH} element={<QuoteDetails />}></Route>
+        <Route path={USER_PATH} element={<ListUsers />}></Route>
+        <Route path={USER_ADD_PATH} element={<CreateUser />}></Route>
       </Routes>
     </>
   );
