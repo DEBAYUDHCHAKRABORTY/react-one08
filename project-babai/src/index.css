@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import "@font/nunito";
 
 body {
@@ -10,6 +9,4 @@ h1 {
   font-family: 'Nunito', sans-serif;
   font-weight: 700; /* Example: applying a specific weight */
 }
-=======
 @import "tailwindcss";
->>>>>>> main
