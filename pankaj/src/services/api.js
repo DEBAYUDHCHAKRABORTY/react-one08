@@ -4,6 +4,6 @@ const http = axios.create({
       baseURL: 'http://localhost:9090/api/v1',
 })
 
-export const getAllUsers = async () => (await http.get("/users")).data
+export const getAllUsers = () => http.get("/users")
 
-export const deleteUserById = async(id) => (await http.delete(`/users/${id}`))
+export const deleteUserById = (id) => http.delete(`/users/${id}`)

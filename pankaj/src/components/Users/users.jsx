@@ -14,7 +14,7 @@ export default function Info() {
     async function fetchInfo() {
         try {
             const jsonData = await getAllUsers()
-            setData(jsonData)
+            setData(jsonData.data)
         } catch (e) {
             console.error(`Error encountered while fetching the quotes ${e}`)
         }
@@ -56,16 +56,17 @@ export default function Info() {
     return (
 
         <>
-        <div className="flex items-center justify-center my-8">
-            <h1 className="text-6xl text-900 font-bold underline underline-offset-8 ">Users</h1>
+            <div className="flex items-center justify-center my-8">
+                <h1 className="text-6xl text-900 font-bold underline underline-offset-8 ">Users</h1>
 
-        </div>
+            </div>
 
             <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
                 <Column header="#" body={(rowData, { rowIndex }) => rowIndex + 1} />
                 <Column field="name" sortable header="Name"></Column>
                 <Column field="age" sortable header="age"></Column>
                 <Column field="phone" header="Phone Number"></Column>
+                <Column field="email" sortable header="Email"></Column>
                 <Column field="country" sortable header="Country"></Column>
                 <Column body={actionBodyTemplate} header="Actions"></Column>
             </DataTable>
