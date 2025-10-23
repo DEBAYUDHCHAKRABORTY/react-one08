@@ -4,15 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const quoteEndpoint = "http://localhost:9090/api/v1/quotes";
 
-function Card({ quote }) {
-  return (
-    <>
-      <h2>{quote.quote}</h2>
-      <h4> - By {quote.author}</h4>
-    </>
-  );
-}
-
 export default function Quotes() {
   const [data, setData] = useState();
   const navigate = useNavigate();
@@ -35,7 +26,6 @@ export default function Quotes() {
   }, []);
 
   function handleClick(id) {
-    console.log("Row clicked " + id);
     navigate(`/quotes/${id}`);
   }
 
