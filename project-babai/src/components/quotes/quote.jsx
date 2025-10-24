@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import "./quote.scss";
+
 import { useNavigate } from "react-router-dom";
-import { fetchQuotes } from "../../services/api/quote";
+import { getAllQuotes } from "../../services/api";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 
 
 
@@ -18,13 +20,13 @@ export default function Quotes() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
 
-    useEffect( () => {
-        const gettingData = async() => {
-            const apiData = await fetchQuotes();
-            setData(apiData);
+    useEffect(() => {
+        const gettingData = async () => {
+            const apiData = await getAllQuotes();
+            setData(apiData.data);
         }
         gettingData();
-        
+
     }, []);
 
     function handleClick(id) {
@@ -33,33 +35,42 @@ export default function Quotes() {
     }
 
     return (
-        <>
-            <h1>Quotes API</h1>
+        <div >
+            <h1 className="text-6xl text-center text-pink-900 my-2">Quotes API</h1>
 
             {data && (
-                <>
-                    <table className="table">
-                        <thead>
-                            <tr id="heading">
-                                <th> Id </th>
-                                <th> Quote </th>
-                                <th> Author </th>
-                            </tr>
-                        </thead>
+                <div className="flex justify-center">
+                    <DataTable value={data} stripedRows showGridlines paginator rows={5} tableStyle={{ maxWidth: '50rem' }}>
+                        <Column header="#" body={(rowData, { rowIndex }) => rowIndex + 1} />
+                        <Column field="quote" header="Quote"></Column>
+                        <Column field="author" sortable header="Author"></Column>
+                    </DataTable>
+                </div>
 
-                        <tbody>
-                            {data.map((itm, idx) => (
-                                <tr key={idx} onClick={() => handleClick(itm.id)}>
-                                    <td>{idx + 1}</td>
-                                    <td>{itm.quote}</td>
-                                    <td>{itm.author}</td>
-                                </tr>
 
-                            ))}
-                        </tbody>
-                    </table>
-                </>
+                // <>
+                //     <table className="table">
+                //         <thead>
+                //             <tr id="heading">
+                //                 <th> Id </th>
+                //                 <th> Quote </th>
+                //                 <th> Author </th>
+                //             </tr>
+                //         </thead>
+
+                //         <tbody>
+                //             {data.map((itm, idx) => (
+                //                 <tr key={idx} onClick={() => handleClick(itm.id)}>
+                //                     <td>{idx + 1}</td>
+                //                     <td>{itm.quote}</td>
+                //                     <td>{itm.author}</td>
+                //                 </tr>
+
+                //             ))}
+                //         </tbody>
+                //     </table>
+                // </>
             )}
-        </>
+        </div>
     );
 }
