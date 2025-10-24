@@ -1,75 +1,114 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { deleteUserById, getAllUsers } from "../../services/api";
+import js from "@eslint/js";
+import { Button } from "primereact/button";
 
-const dataEndpoint = "http://localhost:9090/api/v1/users";
+
 export default function Info() {
     const navigate = useNavigate()
     const [data, setData] = useState();
-    useEffect(() => {
-        async function fetchInfo() {
-            try {
-                const response = await fetch(dataEndpoint);
-                if (response.ok) {
-                    const jsonData = await response.json();
-                    setData(jsonData);
-                    console.log(jsonData);
-                }
 
-            } catch (e) {
-                console.error(`Error encountered while fetching the quotes ${e}`)
-            }
-
+    async function fetchInfo() {
+        try {
+            const jsonData = await getAllUsers()
+            setData(jsonData.data)
+        } catch (e) {
+            console.error(`Error encountered while fetching the quotes ${e}`)
         }
+
+    }
+
+    useEffect(() => {
+
         fetchInfo();
     }, []);
-    function handleSubmit(e){
-            navigate("/adduser")
+    function handleSubmit(e) {
+        navigate("/adduser")
 
     }
     async function deleteUser(id) {
-        const response = await fetch(`${dataEndpoint}/${id}`, { method: "DELETE" });
-        if (response.ok) {
+        const response = await deleteUserById(id);
+        if (response.status === 200) {
             setData(data.filter(user => user.id !== id));
         }
-        
     };
+
+    const header = (
+        <div className="flex flex-wrap align-items-center justify-content-between gap-2">
+            <span className="text-xl text-900 font-bold">Users</span>
+
+        </div>
+    );
+
+    const actionBodyTemplate = (rowData) => {
+        return (
+            <>
+                <Button icon="pi pi-pencil" rounded outlined className="mr-2" />
+                <Button icon="pi pi-trash" rounded outlined severity="danger" onClick={() => deleteUser(rowData.id)} />
+            </>
+        );
+    };
+
+
     return (
+
         <>
-            <h1><u>GET USERS INFO</u></h1>
-            <button style={{ marginLeft: "570px", marginBottom: "10px", backgroundColor: "green", width: "150px" }} onClick={handleSubmit}>ADD USER</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>INDEX</th>
-                        <th>NAME</th>
-                        <th>AGE</th>
-                        <th>PHONE</th>
-                        <th>COUNTRY</th>
-                        <th>ACTIONS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data && (
-                        <>
-                            {data.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.age}</td>
-                                    <td>{item.phone}</td>
-                                    <td>{item.country}</td>
-                                    <td>{item.action}
-                                     <button>UPDATE</button>
-                                     <button onClick={()=> deleteUser(item.id)} style={{marginLeft:"10px"}}>DELETE</button>
-                                    </td>
+            <div className="flex items-center justify-center my-8">
+                <h1 className="text-6xl text-900 font-bold underline underline-offset-8 ">Users</h1>
 
-                                </tr>
-                            ))}
-                        </>
-                    )}
+            </div>
 
-                </tbody>
-            </table>
+            <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
+                <Column header="#" body={(rowData, { rowIndex }) => rowIndex + 1} />
+                <Column field="name" sortable header="Name"></Column>
+                <Column field="age" sortable header="age"></Column>
+                <Column field="phone" header="Phone Number"></Column>
+                <Column field="email" sortable header="Email"></Column>
+                <Column field="country" sortable header="Country"></Column>
+                <Column body={actionBodyTemplate} header="Actions"></Column>
+            </DataTable>
         </>
+
+
+        // <>
+        //     <h1><u>GET USERS INFO</u></h1>
+        //     <button style={{ marginLeft: "570px", marginBottom: "10px", backgroundColor: "green", width: "150px" }} onClick={handleSubmit}>ADD USER</button>
+        //     <table>
+        //         <thead>
+        //             <tr>
+        //                 <th>INDEX</th>
+        //                 <th>NAME</th>
+        //                 <th>AGE</th>
+        //                 <th>PHONE</th>
+        //                 <th>COUNTRY</th>
+        //                 <th>ACTIONS</th>
+        //             </tr>
+        //         </thead>
+        //         <tbody>
+        //             {data && (
+        //                 <>
+        //                     {data.map((item, index) => (
+        //                         <tr key={index}>
+        //                             <td>{index + 1}</td>
+        //                             <td>{item.name}</td>
+        //                             <td>{item.age}</td>
+        //                             <td>{item.phone}</td>
+        //                             <td>{item.country}</td>
+        //                             <td>{item.action}
+        //                              <button>UPDATE</button>
+        //                              <button onClick={()=> deleteUser(item.id)} style={{marginLeft:"10px"}}>DELETE</button>
+        //                             </td>
+
+        //                         </tr>
+        //                     ))}
+        //                 </>
+        //             )}
+
+        //         </tbody>
+        //     </table>
+        // </>
     )
 }
