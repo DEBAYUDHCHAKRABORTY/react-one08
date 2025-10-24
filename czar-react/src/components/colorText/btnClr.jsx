@@ -19,7 +19,7 @@ export default function BtnClr() {
 
   return (
     <>
-      <h1 style={{ color: text }}>Change My Colour</h1>
+      <h1>Change My Colour</h1>
       <div>
         <div>
           <button value="red" onClick={handleClr}>

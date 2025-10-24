@@ -1,11 +1,10 @@
-@import "@font/nunito";
+@import "tailwindcss";
 
-body {
-  font-family: 'Nunito', sans-serif; /* Fallback to a generic sans-serif font */
-}
+
 
 /* Or apply to specific elements */
 h1 {
   font-family: 'Nunito', sans-serif;
   font-weight: 700; /* Example: applying a specific weight */
 }
+@import "tailwindcss";

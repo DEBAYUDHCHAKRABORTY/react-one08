@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "primereact/button";
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column";
 
 const userUrl = "http://localhost:9090/api/v1/users";
-
 
 export default function FrntPg() {
   const [data, setData] = useState();
@@ -39,28 +41,27 @@ export default function FrntPg() {
     setData(data.filter((data) => data.id !== id));
   };
 
-  function handleAddUsers(){
-      navigate(`/users/:addUser`)
+  function handleAddUsers() {
+    navigate(`/users/:addUser`);
   }
 
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "#F3F2EC",
-          padding: "50px",
-          borderRadius: "20px",
-        }}
-      >
-        <h1 style={{ color: "red" }}>
-          <u>USERS</u>
+      <div className="flex-col justify-center">
+        <h1 className="text-red-500 text-5xl text-center bg-amber-300">
+          USERS
         </h1>
-        <button onClick={handleAddUsers} style={{ marginLeft: "500px", width: "205px" }}>
-          ADD USER
-        </button>
-        {data && (
-          <>
-            <table>
+        <Button clas label="ADD USERS" onClick={handleAddUsers} />
+        <div className="card bg-red-400">
+          <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
+            <Column field="name" header="NAME"></Column>
+            <Column field="age" header="AGE"></Column>
+            <Column field="city" header="CITY"></Column>
+            {/* <Column field="" header="ACTIONS"></Column> */}
+          </DataTable>
+        </div>
+
+        {/* <table>
               <thead>
                 <tr>
                   <th>NAME</th>
@@ -68,7 +69,7 @@ export default function FrntPg() {
                   <th>PHONE NO.</th>
                   <th>CITY</th>
                   <th>ACTIONS</th>
-                </tr>
+                </tr> 
               </thead>
               <tbody>
                 {data.map((itm, idx) => (
@@ -78,15 +79,13 @@ export default function FrntPg() {
                     <td>{itm.phone}</td>
                     <td>{itm.city}</td>
                     <td>
-                      <button style={{ marginRight: "10px" }}>UPDATE</button>
-                      <button onClick={() => handleDelete(itm.id)}>DELETE</button>
+                      <Button label="Update" style={{marginRight:'5px'}}/>
+                      <Button label="Delete" onClick={() => handleDelete(itm.id)}/>
                     </td>
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </>
-        )}
+            </table> */}
       </div>
     </>
   );

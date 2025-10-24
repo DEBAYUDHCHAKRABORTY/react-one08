@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FaPenToSquare } from "react-icons/fa6";
-import './users.scss'
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { getAllUsers } from "../../services/api";
 
 
 const usersEndpoint = "http://localhost:9090/api/v1/users"
@@ -15,11 +15,9 @@ export default function ListUsers() {
 
     async function fetchData() {
         try {
-            const response = await fetch(usersEndpoint)
-            if (response.ok) {
-                const jsonData = await response.json();
-                setData(jsonData);
-                console.log(jsonData)
+            const response = await getAllUsers();
+            if (response.status === 200) {
+                setData(response.data);
             }
         } catch (e) {
             console.error(`Error encountered while fetching quotes: ${e}`);
