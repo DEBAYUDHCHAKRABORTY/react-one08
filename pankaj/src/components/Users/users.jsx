@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { deleteUserById, getAllUsers } from "../../services/api";
+import { updateUserById, getAllUsers } from "../../services/api";
 import js from "@eslint/js";
 import { Button } from "primereact/button";
 
@@ -35,6 +36,13 @@ export default function Info() {
             setData(data.filter(user => user.id !== id));
         }
     };
+    async function updateUser(id) {
+        const response = await updateUserById(id);
+        if (response.status === 200) {
+            setData(data.filter(user => user.id !== id));
+        }
+    };
+
 
     const header = (
         <div className="flex flex-wrap align-items-center justify-content-between gap-2">
@@ -46,7 +54,7 @@ export default function Info() {
     const actionBodyTemplate = (rowData) => {
         return (
             <>
-                <Button icon="pi pi-pencil" rounded outlined className="mr-2" />
+                <Button icon="pi pi-pencil" rounded outlined severity="danger" className="mr-2" onClick={() => updateUser(rowData.id)}/>
                 <Button icon="pi pi-trash" rounded outlined severity="danger" onClick={() => deleteUser(rowData.id)} />
             </>
         );
