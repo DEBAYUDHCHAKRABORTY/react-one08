@@ -32,7 +32,7 @@ export default function QuoteDetail() {
 
       {data && (
         <>
-          <div className="details" style={{backgroundImage: `url(${data.bgImage})`, width: '800px', height:'600px'}}>
+          <div className="details" >
             <div className="text">
               <h2>{data.quote}</h2>
               <h3>-By {data.author}</h3>
