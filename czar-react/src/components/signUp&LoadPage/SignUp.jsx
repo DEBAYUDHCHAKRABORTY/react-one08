@@ -96,20 +96,13 @@ export default function SignUp() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div
-          style={{
-            backgroundColor: "#FFCF71",
-            borderRadius: "10px",
-            width: "500px",
-            padding: "20px",
-          }}
-        >
+        <div>
           <h2>
             <u> SIGN UP </u>
           </h2>
           <div style={{ padding: "20px" }}>
             <input
-              style={inputTextStyles}
+              
               type="text"
               value={formvalues.firstName}
               placeholder="ENTER FIRST NAME"
@@ -120,7 +113,7 @@ export default function SignUp() {
           <ErrorMsg message={formErrors.firstName} />
           <div>
             <input
-              style={inputTextStyles}
+              
               type="text"
               placeholder="ENTER LAST NAME"
               name="lastName"
@@ -143,11 +136,10 @@ export default function SignUp() {
           </div>
           <ErrorMsg message={formErrors.gender} />
 
-          <div style={{ padding: "20px" }}>
+          <div>
             <input
               type="text"
               placeholder="CONTACT NUMBER"
-              style={inputTextStyles}
               name="contactNumber"
               onInput={handlChange}
             />
@@ -158,29 +150,26 @@ export default function SignUp() {
             <input
               type="text"
               placeholder="EMAIL"
-              style={inputTextStyles}
               name="email"
               onInput={handlChange}
             />
           </div>
           <ErrorMsg message={formErrors.email} />
 
-          <div style={{ padding: "20px" }}>
+          <div>
             <input
               type="password"
               placeholder="ENTER PASSWORD"
-              style={inputTextStyles}
               name="password"
               onInput={handlChange}
             />
             <ErrorMsg message={formErrors.password} />
           </div>
 
-          <div tyle={{ padding: "20px" }}>
+          <div>
             <input
               type="password"
               placeholder="CONFIRM PASSWORD"
-              style={inputTextStyles}
               name="confirmPassword"
               onInput={handlChange}
             />
@@ -188,7 +177,7 @@ export default function SignUp() {
           <ErrorMsg message={formErrors.confirmPassword} />
 
           <div>
-            <button type="submit" style={{ backgroundColor: "chocolate" }}>
+            <button type="submit">
               SUBMIT
             </button>
           </div>
