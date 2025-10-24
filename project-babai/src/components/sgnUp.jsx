@@ -1,12 +1,13 @@
+import { Button } from "primereact/button";
+import { InputText } from "primereact/inputtext";
 import { useState } from "react";
-import './SignUp.scss';
 
 
 
 export default function SignUp() {
 
     const [action, setAction] = useState("SignUp");
-   
+
 
     function handleNameChange(e) {
         setForm({
@@ -28,16 +29,18 @@ export default function SignUp() {
 
 
     return (
-        <div className="Container">
-            <div className="Header">
-                <div className="Text">
+        <div >
+            <div >
+                <div >
                     <h1>{action}</h1>
                 </div>
 
-                <div className="inputs"></div>
-                {action=== "LogIn"?<div></div>:<div className="input">{/* <img src={nameIcon} alt="" /> */}
-                    <input type="text" name="name" placeholder="Name" onInput={handleNameChange} /></div>}
-            
+                <div ></div>
+                {action === "LogIn" ? <div></div> : <div className="input">
+                    <InputText name="name" placeholder="Name" onInput={handleNameChange} /></div>}
+
+                <InputText name="name" placeholder="Name" onInput={handleNameChange} />
+
 
                 <p>Genders :</p>
                 <div className="input">
@@ -58,17 +61,19 @@ export default function SignUp() {
                     {/* <img src={phoneIcon} alt="" /> */}
                     <input type="number" name="PhoneNo" placeholder="Enter Phone No" />
                 </div >
-                {action=== "SignUp"? <div></div>: <div className="forgot-password">Forgot password? <span>Click Here</span></div>}
+                {action === "SignUp" ? <div></div> : <div className="forgot-password">Forgot password? <span>Click Here</span></div>}
 
-                
+
 
                 <div className="submit-container">
 
-                    <div className={action=== "SignUp" ? "submit gray" : "submit"}onClick={()=>{setAction("SignUp")}}>
-                        SingUp
-                    </div> 
+                    <Button>Submit </Button>
 
-                    <div className={action=== "LogIn" ? "submit gray" : "submit"} onClick={()=>{setAction("LogIn")}}> 
+                    <div className={action === "SignUp" ? "submit gray" : "submit"} onClick={() => { setAction("SignUp") }}>
+                        SingUp
+                    </div>
+
+                    <div className={action === "LogIn" ? "submit gray" : "submit"} onClick={() => { setAction("LogIn") }}>
                         LogIn
                     </div>
 
