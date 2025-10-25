@@ -7,3 +7,11 @@ const http = axios.create({
 export const getAllUsers = () => http.get("/users")
 
 export const deleteUserById = (id) => http.delete(`/users/${id}`)
+export const updateUserById = (id) => http.update(`/users/${id}`)
+export const conform1UserById = (id) => http.conform1(`/users/delete/${id}`)
+
+export const searchUser = (userName) => http.get(`/users/search/${userName}`)
+
+
+
+export const deleteUserById = (id) => http.delete(`/users/${id}`)
