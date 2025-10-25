@@ -11,26 +11,7 @@ const userUrl = "http://localhost:9090/api/v1/users";
 export default function FrntPg() {
   const [data, setData] = useState();
   const navigate = useNavigate();
-
   const toast = useRef(null);
-
-  const accept = () => {
-    toast.current.show({
-      severity: "warn",
-      summary: "Deleted",
-      detail: "Record Deleted",
-      life: 3000,
-    });
-  };
-
-  const reject = () => {
-    toast.current.show({
-      severity: "warn",
-      summary: "Rejected",
-      detail: "You have rejected",
-      life: 3000,
-    });
-  };
 
   useEffect(() => {
     async function userData() {
@@ -49,23 +30,21 @@ export default function FrntPg() {
   }, []);
 
   const handleDelete = async (id) => {
-
-    confirmDialog({
-      message: "Do you want to delete this record?",
-      header: "Delete Confirmation",
-      icon: "pi pi-info-circle",
-      defaultFocus: "reject",
-      acceptClassName: "p-button-danger",
-      accept,
-      reject,
-    });
-
     try {
       const res = await fetch(`${userUrl}/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {
         throw new Error("Failed to delete item");
+      }
+      if (res.status === 200) {
+        setData(data.filter((user) => user.id !== id));
+        toast.current.show({
+          severity: "warn",
+          summary: "Deleted",
+          detail: "Your Record has been deleted",
+          life: 3000,
+        });
       }
       console.log("Item deleted successfully");
     } catch (error) {
@@ -74,18 +53,42 @@ export default function FrntPg() {
     setData(data.filter((data) => data.id !== id));
   };
 
+  const confirm = async (id) => {
+    confirmDialog({
+      message: "Do you want to delete this record?",
+      header: "Delete Confirmation",
+      icon: "pi pi-info-circle",
+      defaultFocus: "reject",
+      acceptClassName: "p-button-danger",
+      accept: () => handleDelete(id),
+      reject: () =>
+        toast.current.show({
+          severity: "info",
+          summary: "Cancelled",
+          detail: "Deletion cancelled",
+          life: 2000,
+        }),
+    });
+  };
+
   const actionBodyTemplate = (rowData) => {
     return (
       <>
-        <Toast ref={toast} />
-        <ConfirmDialog />
-        <div className="card flex flex-wrap gap-2 justify-content-center">
-          <Button icon="pi pi-pencil" rounded outlined className="mr-2" />
-          <Button
-            onClick={() => handleDelete(rowData.id)}
-            icon="pi pi-trash"
-          ></Button>
-        </div>
+        <Button
+          icon="pi pi-pencil"
+          rounded
+          outlined
+          severity="danger"
+          className="mr-2"
+          onClick={() => updateUser(rowData.id)}
+        />
+        <Button
+          icon="pi pi-trash"
+          rounded
+          outlined
+          severity="danger"
+          onClick={() => confirm(rowData.id)}
+        />
       </>
     );
   };
@@ -96,6 +99,8 @@ export default function FrntPg() {
 
   return (
     <>
+      <Toast ref={toast} />
+      <ConfirmDialog />
       <div className="flex-col justify-center">
         <h1 className="text-red-500 text-5xl text-center">USERS</h1>
         <Button clas label="ADD USERS" onClick={handleAddUsers} />
