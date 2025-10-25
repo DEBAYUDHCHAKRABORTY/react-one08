@@ -1,27 +1,12 @@
-const quoteEndpoint = "http://localhost:9090/api/v1/quotes";
+import axios from "axios";
 
-export async function fetchQuotes() {
-    try {
-        const response = await fetch(quoteEndpoint);
-        if (response.ok) {
-            const jsonData = await response.json();
-            return jsonData
-        }
-    } catch (e) {
-        console.error(`Error encountered while fetching quotes: ${e}`);
-        throw e;
-    }
-}
+const http = axios.create({
+    baseURL: "http://localhost:9090/api/v1"
+})
 
-export async function fetchQuotesById(id) {
-    try {
-        const response = await fetch(`${quoteEndpoint}/${id}`);
-        if (response.ok) {
-            const jsonData = await response.json();
-            return jsonData
-        }
-    } catch (e) {
-        console.error(`Error encountered while fetching quotes: ${e}`);
-        throw e;
-    }
-}
+export const getAllUsers = () => http.get("/users")
+export const deleteUserById = (id) => http.delete(`/users/${id}`)
+export const searchUser = (userName) => http.get(`/users/search/${userName}`)
+
+export const getAllQuotes = () => http.get("/quotes")
+export const getQuoteById = (id) => http.get(`/quotes/${id}`)
