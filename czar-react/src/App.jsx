@@ -19,13 +19,13 @@ import AddUsers from "./components/USERS/addUsers";
 import QuoteDetails from "./components/QUOTES/quoteDetails"
 import ListUsers from "./components/USERS/frontPage"
 import CreateUser from "./components/USERS/addUsers"
-
 import {
-  QUOTES,
   QUOTE_DETAIL_PATH,
   USER_ADD_PATH,
   USER_PATH,
+  USER_SEARCH_PATH,
 } from "./constants/routeconstants";
+import Search from "./components/USERS/search";
 
 function App() {
   return (
@@ -36,10 +36,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/success" element={<Success />} />
-        <Route path={QUOTES} element={<Quotes />}></Route>
         <Route path={QUOTE_DETAIL_PATH} element={<QuoteDetails />}></Route>
         <Route path={USER_PATH} element={<ListUsers />}></Route>
         <Route path={USER_ADD_PATH} element={<CreateUser />}></Route>
+        <Route path={USER_SEARCH_PATH} element={<Search/>}></Route>
       </Routes>
     </div>
   );

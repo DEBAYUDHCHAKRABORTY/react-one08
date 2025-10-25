@@ -1,9 +1,8 @@
- import { Button } from "primereact/button";
 import { InputText } from "primereact/inputtext";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState } from "react";
-import { searchUser } from "../../services/api";
+import { searchUser } from "../../service/api/quote";
 
 
 export default function Search() {
@@ -41,7 +40,7 @@ export default function Search() {
     return (
         <div>
 
-            <h1 className="text-6xl my-4">Search here</h1>
+            <h1 className="text-6xl my-4 text-blue-400">Search here</h1>
             <span className="mr-2">
                 <InputText type="text" value={searchTerm} onInput={handleInputChange} className="p-inputtext-sm w-100" placeholder="Enter the username that you want to search..." />
             </span>
