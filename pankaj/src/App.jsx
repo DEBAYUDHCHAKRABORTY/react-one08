@@ -26,6 +26,7 @@ import Usedata from './components/api7'
 import QuoteDetail from './components/quotesDetail'
 import Info from './components/Users/users'
 import Adduser from './components/Users/adduser'
+import Search from './components/prime/search'
 
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
         <Route path="/users" element={<Usedata />} />
         <Route path="/info" element={<Info />} />
         <Route path="/adduser" element={<Adduser />} />
+        <Route path="/search" element={<Search />} />
+
       </Routes>
     </div>
 
