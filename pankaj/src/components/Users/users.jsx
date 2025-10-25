@@ -38,9 +38,11 @@ export default function Info() {
     async function updateUser(id) {
         const response = await updateUserById(id);
         if (response.status === 200) {
+
             setData(data.filter(user => user.id !== id));
         }
     };
+
 
 
     const header = (
@@ -54,6 +56,7 @@ export default function Info() {
         return (
             <>
                 <Button icon="pi pi-pencil" rounded outlined severity="danger" className="mr-2" onClick={() => updateUser(rowData.id)}/>
+                <Button icon="pi pi-pencil" rounded outlined className="mr-2" />
                 <Button icon="pi pi-trash" rounded outlined severity="danger" onClick={() => deleteUser(rowData.id)} />
             </>
         );
