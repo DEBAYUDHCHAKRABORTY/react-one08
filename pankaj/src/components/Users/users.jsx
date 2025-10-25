@@ -6,8 +6,8 @@ import { Column } from 'primereact/column';
 import { deleteUserById, getAllUsers } from "../../services/api";
 import js from "@eslint/js";
 import { Button } from "primereact/button";
-import { ConfirmDialog } from 'primereact/confirmdialog'; // For <ConfirmDialog /> component
-import { confirmDialog } from 'primereact/confirmdialog'; // For confirmDialog method
+import { ConfirmDialog } from 'primereact/confirmdialog'; 
+import { confirmDialog } from 'primereact/confirmdialog'; 
 import { Toast } from 'primereact/toast';
 
 
