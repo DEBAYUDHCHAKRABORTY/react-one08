@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { deleteUserById, getAllUsers } from "../../services/api";
-import { updateUserById, getAllUsers } from "../../services/api";
 import js from "@eslint/js";
 import { Button } from "primereact/button";
 
