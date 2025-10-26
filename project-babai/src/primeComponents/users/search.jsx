@@ -3,7 +3,7 @@ import { InputText } from "primereact/inputtext";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState } from "react";
-import { searchUser } from "../../services/api";
+import { searchUser } from "../../services";
 
 
 export default function Search() {
