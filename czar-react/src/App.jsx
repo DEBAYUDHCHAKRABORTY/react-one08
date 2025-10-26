@@ -16,9 +16,9 @@ import Success from "./components/success/success";
 import Quotes from "./components/QUOTES/quotes";
 import FrntPg from "./components/USERS/frontPage";
 import AddUsers from "./components/USERS/addUsers";
-import QuoteDetails from "./components/QUOTES/quoteDetails"
-import ListUsers from "./components/USERS/frontPage"
-import CreateUser from "./components/USERS/addUsers"
+import QuoteDetails from "./components/QUOTES/quoteDetails";
+import ListUsers from "./components/USERS/frontPage";
+import CreateUser from "./components/USERS/addUser";
 import {
   QUOTE_DETAIL_PATH,
   USER_ADD_PATH,
@@ -39,7 +39,7 @@ function App() {
         <Route path={QUOTE_DETAIL_PATH} element={<QuoteDetails />}></Route>
         <Route path={USER_PATH} element={<ListUsers />}></Route>
         <Route path={USER_ADD_PATH} element={<CreateUser />}></Route>
-        <Route path={USER_SEARCH_PATH} element={<Search/>}></Route>
+        <Route path={USER_SEARCH_PATH} element={<Search />}></Route>
       </Routes>
     </div>
   );

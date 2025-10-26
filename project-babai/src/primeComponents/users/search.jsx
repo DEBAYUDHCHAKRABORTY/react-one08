@@ -3,7 +3,7 @@ import { InputText } from "primereact/inputtext";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState } from "react";
-import { searchUser } from "../../services/api";
+import { deleteUserById, searchUser } from "../../services/api/index";
 
 
 export default function Search() {
@@ -18,7 +18,7 @@ export default function Search() {
                 setSearchResult(response.data)
             }
         } catch (e) {
-            console.log(err)
+            console.log(e)
         }
     }
 
@@ -31,9 +31,16 @@ export default function Search() {
                 setSearchResult(response.data)
             }
         } catch (e) {
-            console.log(err)
+            console.log(e)
         }
     }
+
+    async function deleteUser(id) {
+            const response = await deleteUserById(id);
+            if (response.status === 200) {
+                setData(data.filter(user => user.id !== id));
+            }
+        };
 
 
 
@@ -57,5 +64,5 @@ export default function Search() {
             </div>
 
         </div>
-    )
+    );
 }
