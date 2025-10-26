@@ -50,11 +50,11 @@ export default function ListUsers() {
 
     return (
         <>
-            <h1 className="text-6xl font-bold text-gray-800 p-4">User Data</h1>
+            <h1 className="text-6xl font-bold text-gray-800 p-4 bg-blue-200 underline font-stretch-%">User Data</h1>
 
 
             <div className="page-action card flex justify-content-center float-right">
-                <Button icon={<FaPlus/>} label="Add Users" onClick={handleAddUserNavigate} />
+                <Button icon={<FaPlus />} label="Add Users" onClick={handleAddUserNavigate} />
             </div>
 
 
@@ -62,18 +62,19 @@ export default function ListUsers() {
 
                 <div>
                     <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
-                <Column field="name" header="Name"></Column>
-                <Column field="age" header="Age"></Column>
-                <Column field="phone" header="Phone no"></Column>
-                <Column field="country" header="Country"></Column>
-                <Column field="action" header="Action" 
-                    <span className="pi-pen-to-square style={{fontSize:2rem}}"></span>>
-                    <span className=""
-                    
-                    </Column>
-            </DataTable>
-                </div>
-            )}
+                        <Column field="name" header="Name"></Column>
+                        <Column field="age" header="Age"></Column>
+                        <Column field="phone" header="Phone no"></Column>
+                        <Column field="country" header="Country"></Column>
+                        <Column field="action" header="Action">
+                            <i className="pi-pen-to-square style= {{fontSize:2rem color: 'var(--primary-color)'}}"></i>
+                            <i className="pi-trash style= {{fontSize:2rem color: 'var(--primary-color)' }}"></i>
+                        </Column>
+
+                    </DataTable>
+                </div >
+            )
+            }
         </>
     );
 }
