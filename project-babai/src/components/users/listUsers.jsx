@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { FaRegTrashCan } from "react-icons/fa6";
-import { FaPenToSquare } from "react-icons/fa6";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { Button } from 'primereact/button';
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import { getAllUsers } from "../../services/api";
+import { getAllUsers } from "../../services/";
+import { classNames } from "primereact/utils";
 
 
 const usersEndpoint = "http://localhost:9090/api/v1/users"
@@ -45,44 +47,33 @@ export default function ListUsers() {
         navigate("/users/create")
     }
 
-    // Returning the List Users component
+
     return (
         <>
-            <h1>User Data</h1>
-            <div className="page-action">
-                <button onClick={handleAddUserNavigate} ><FaPlus />  Add Users</button>
+            <h1 className="text-6xl font-bold text-gray-800 p-4">User Data</h1>
+
+
+            <div className="page-action card flex justify-content-center float-right">
+                <Button icon={<FaPlus/>} label="Add Users" onClick={handleAddUserNavigate} />
             </div>
 
+
             {data && (
+
                 <div>
-                    <table className="table">
-                        <thead>
-                            <tr id="heading">
-                                <th>Name</th>
-                                <th>Age</th>
-                                <th>Ph Number</th>
-                                <th>City</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((itm, idx) => (
-                                <tr key={idx}>
-                                    <td>{itm.name}</td>
-                                    <td>{itm.age}</td>
-                                    <td>{itm.phone}</td>
-                                    <td>{itm.city}</td>
-                                    <td>
-                                        <span className="table-action"><FaPenToSquare onClick={handleEdit} /></span>
-                                        <span className="table-action" style={{ color: 'red' }}><FaRegTrashCan onClick={() => handleDelete(itm.id)} /></span>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
+                <Column field="name" header="Name"></Column>
+                <Column field="age" header="Age"></Column>
+                <Column field="phone" header="Phone no"></Column>
+                <Column field="country" header="Country"></Column>
+                <Column field="action" header="Action" 
+                    <span className="pi-pen-to-square style={{fontSize:2rem}}"></span>>
+                    <span className=""
+                    
+                    </Column>
+            </DataTable>
                 </div>
             )}
-
         </>
     );
 }

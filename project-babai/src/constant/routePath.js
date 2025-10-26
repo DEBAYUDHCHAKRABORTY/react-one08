@@ -1,4 +1,4 @@
-export const  USER_SEARCH_PATH = "/user/search" 
+export const  USER_SEARCH_PATH = "/search";
 
 export const QUOTE_PATH = "/quotes";
 export const QUOTE_DETAIL_PATH = "/quotes/:id";

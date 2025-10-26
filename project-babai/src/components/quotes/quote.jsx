@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
-import { getAllQuotes } from "../../services/api";
+import { getAllQuotes } from "../../services/index";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 

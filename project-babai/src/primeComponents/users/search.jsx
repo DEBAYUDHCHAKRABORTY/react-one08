@@ -3,7 +3,7 @@ import { InputText } from "primereact/inputtext";
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { useState } from "react";
-import { searchUser } from "../../services";
+import { searchUser } from "../../services/index";
 
 
 export default function Search() {
@@ -45,9 +45,9 @@ export default function Search() {
             <span className="mr-2">
                 <InputText type="text" value={searchTerm} onInput={handleInputChange} className="p-inputtext-sm w-100" placeholder="Enter the username that you want to search..." />
             </span>
-            {/* <Button onClick={handleSearch}>Search</Button> */}
+            <Button onClick={handleSearch}>Search</Button>
 
-            <div className="card my-4">
+            <div className="card my-4" >
                 <DataTable value={searchResult} tableStyle={{ minWidth: '50rem' }}>
                     <Column field="name" header="Apna Name"></Column>
                     <Column field="username" header="Apna bulawa hua naam"></Column>
@@ -57,5 +57,5 @@ export default function Search() {
             </div>
 
         </div>
-    )
+    );
 }

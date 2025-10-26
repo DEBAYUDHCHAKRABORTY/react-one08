@@ -23,7 +23,7 @@ export default function HomePage() {
             <li><Link to="/quotes" > Quotes </Link></li>
             <li><Link to= "/users"> ListUsers</Link></li>
             <li><Link to= "/users/create"> UserForm</Link></li>
-            {/* <li><Link to= {USER_SEARCH_PATH}> Search </Link></li> */}
+            <li><Link to= {USER_SEARCH_PATH}> Search </Link></li>
         </ol>
 
     </>);

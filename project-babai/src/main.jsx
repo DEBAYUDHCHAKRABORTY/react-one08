@@ -6,7 +6,7 @@ import "primereact/resources/themes/lara-light-blue/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 import { PrimeReactProvider } from 'primereact/api';
-import "primereact/resources/themes/arya-orange/theme.css"
+// import "primereact/resources/themes/arya-orange/theme.css"
 import "primereact/resources/primereact.min.css"
 import "primeicons/primeicons.css"
 
