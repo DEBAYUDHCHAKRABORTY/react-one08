@@ -9,6 +9,7 @@ import SignUp from './component/Sign'
 import Terad from './component/Ret1'
 import { Route, Routes } from 'react-router-dom'
 import Data1 from './component/quote'
+import { Calendar } from 'primereact/calendar'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/emoji" element={<Emoji />} />
         <Route path='/terad' element={<Terad />} />
         <Route path='/Data1' element={<Data1 />} />
+        <Route path='/Calender'element={<Calendar/>}/>
 
 
 
