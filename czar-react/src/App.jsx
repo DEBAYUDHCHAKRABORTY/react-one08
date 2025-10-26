@@ -7,9 +7,9 @@ import LogIn from "./components/login/logIn";
 import Success from "./components/success/success";
 import ListUsers from "./components/users/users";
 import QuoteDetails from "./components/quotes/quoteDetails";
-import CreateUser from "./components/users/addUser";
 import {QUOTE_DETAIL_PATH, USER_ADD_PATH, USER_PATH, USER_SEARCH_PATH,} from "./constants/routeconstants";
 import Search from "./components/users/search";
+import CreateUser from "./components/USERS/addUser";
 
 function App() {
     return (
