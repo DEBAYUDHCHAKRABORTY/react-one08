@@ -97,13 +97,25 @@ export default function FrntPg() {
     navigate(`/users/:addUser`);
   }
 
+  function handleSearch(){
+    navigate(`/users/search`);
+  }
+
   return (
     <>
       <Toast ref={toast} />
       <ConfirmDialog />
       <div className="flex-col justify-center">
-        <h1 className="text-red-500 text-5xl text-center">USERS</h1>
-        <Button clas label="ADD USERS" onClick={handleAddUsers} />
+        <h1 className="text-red-500 text-5xl text-center  mb-8">USERS</h1>
+
+        <div className="flex justify-between">
+        <Button icon="pi pi-search" label="Search" className="mr-50" onClick={handleSearch}/>
+
+        <Button icon="pi pi-user" clas label="ADD USERS" onClick={handleAddUsers} className="ml-100" />
+        </div>
+
+
+
         <div className="card bg-red-400">
           <DataTable value={data} tableStyle={{ minWidth: "50rem" }}>
             <Column header="#" body={(rowData, { rowIndex }) => rowIndex + 1} />
