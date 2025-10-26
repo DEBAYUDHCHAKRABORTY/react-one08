@@ -23,13 +23,16 @@ import HomePage from './components/homepage'
 import Login from './components/login'
 import Quotes from './components/quotes'
 import Usedata from './components/api7'
-
+import QuoteDetail from './components/quotesDetail'
+import Info from './components/Users/users'
+import Adduser from './components/Users/adduser'
+import Search from './components/prime/search'
 
 
 function App() {
-
   return (
-    <>
+    <div className="container mx-auto px-4">
+
       <Routes >
         <Route path="/" element={<HomePage />} />
         <Route path="/comp1" element={<Add />} />
@@ -49,64 +52,15 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/quotes" element={<Quotes />} />
+        <Route path="/quotes/:id" element={<QuoteDetail />} />
         <Route path="/users" element={<Usedata />} />
-
-
-
+        <Route path="/info" element={<Info />} />
+        <Route path="/adduser" element={<Adduser />} />
+        <Route path="/search" element={<Search />} />
 
       </Routes>
+    </div>
 
-
-
-
-
-
-
-
-
-      {/* 
-      <Multi />
-      <FFF />
-      <RadioCity />
-      <InRadChe />
-      <Greet />
-
-      <Call />
-      <Getdata />
-      <QuoteGenerator />
-      <Weather />
-      <Call />
-      <Quote />
-      <Userdata />
-      <Color />
-      <TextChange />
-      <Change />
-      <Greeting />
-      <Login />
-
-      <Quote />
-      <Routes /> */}
-      {/* <Add/>
-      <Multi/>
-      <FFF/>
-      <RadioCity/>
-      <InRadChe/>
-      <Greet/>
-
-      <Call/> */}
-      {/* <Getdata/> */}
-      {/* <QuoteGenerator/>
-      <Weather/>
-      <Call/> */}
-      {/* <Quote/> */}
-      {/* <Userdata/> */}
-      {/* <Color/> */}
-      {/* <TextChange/> */}
-      {/* <Change/> */}
-      <Greeting />
-
-      {/* <Quote/> */}
-    </>
   )
 }
 

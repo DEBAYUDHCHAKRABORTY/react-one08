@@ -2,14 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Rong from './component/Colour'
-import Emoji from './component/Emoj'
+import Rong from './component/colour'
+import Emoji from './component/emoj'
 import Pubg from './component/game'
-import SignUp from './component/Sign'
-import Terad from './component/Ret1'
+import SignUp from './component/sign'
+import Terad from './component/ret1'
 import { Route, Routes } from 'react-router-dom'
 import Data1 from './component/quote'
-import { Calendar } from 'primereact/calendar'
+import  Calender  from './component/calendar'
 function App() {
 
   return (
@@ -22,7 +22,7 @@ function App() {
         <Route path="/emoji" element={<Emoji />} />
         <Route path='/terad' element={<Terad />} />
         <Route path='/Data1' element={<Data1 />} />
-        <Route path='/Calender'element={<Calendar/>}/>
+        <Route path='/Calender'element={<Calender/>}/>
 
 
 
