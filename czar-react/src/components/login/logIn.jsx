@@ -71,26 +71,18 @@ export default function LogIn() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div
-          style={{
-            backgroundColor: "#BADFDB",
-            borderRadius: "10px",
-            width: "400px",
-            padding: "20px",
-          }}
-        >
+        <div>
           <div>
             <h2>
               <u>LOG IN</u>
             </h2>
           </div>
 
-          <div style={{ padding: "20px" }}>
+          <div>
             <input
               type="text"
               placeholder="ENTER EMAIL"
               name="email"
-              style={inputTextStyles}
               onInput={handlChange}
             />
           </div>
@@ -101,14 +93,13 @@ export default function LogIn() {
               type="passwoord"
               placeholder="ENTER PASSWORD"
               name="password"
-              style={inputTextStyles}
               onInput={handlChange}
             />
           </div>
           <ErrorMsg message={formErrors.password} />
 
-          <div style={{ padding: "20px" }}>
-            <button type="submit" style={{ backgroundColor: "#FFA4A4" }}>LOG IN</button>
+          <div>
+            <button type="submit">LOG IN</button>
           </div>
         </div>
       </form>
@@ -118,7 +109,7 @@ export default function LogIn() {
   function ErrorMsg({ message }) {
     return (
       <>
-        <p style={{ color: "red" }}>{message}</p>
+        <p>{message}</p>
       </>
     );
   }

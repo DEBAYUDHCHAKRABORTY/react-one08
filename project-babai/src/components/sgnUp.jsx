@@ -1,7 +1,6 @@
-import { Button } from "primereact/button";
-import { InputText } from "primereact/inputtext";
-import { useState } from "react";
-
+import {Button} from "primereact/button";
+import {InputText} from "primereact/inputtext";
+import {useState} from "react";
 
 
 export default function SignUp() {

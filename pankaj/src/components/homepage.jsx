@@ -24,12 +24,7 @@ export default function HomePage() {
             <li><Link to="/login" > Login</Link></li>
             <li><Link to="/info" > Info</Link></li>
             <li><Link to="/adduser" > Adduser</Link></li>
-
-
-
-
-
-
-        </ol>
+            <li><Link to="/search" > Search</Link></li>
+         </ol>
     );
 }

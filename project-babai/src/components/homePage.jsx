@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { USER_SEARCH_PATH } from "../constant/routePath";
+import {Link} from "react-router-dom"
+import {USER_SEARCH_PATH} from "../constant/routePath";
 
 export default function HomePage() {
 

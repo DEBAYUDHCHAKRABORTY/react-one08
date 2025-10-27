@@ -11,7 +11,7 @@ import InputColor from './components/InputColor'
 import Greetings from './components/greetings'
 import SignUp from './components/sgnUp'
 import Login from './components/Login'
-import { Route, Routes } from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import HomePage from './components/homePage'
 import ListUsers from './components/users/listUsers'
 import CreateUser from './components/users/addUser'
@@ -19,7 +19,7 @@ import './App.css'
 import QuoteDetails from './components/quotes/quoteDetails'
 import Quotes from './components/quotes/quote'
 import Search from './primeComponents/users/search'
-import { USER_SEARCH_PATH, QUOTE_DETAIL_PATH, QUOTE_PATH, USER_ADD_PATH, USER_PATH } from './constant/routePath'
+import {QUOTE_DETAIL_PATH, QUOTE_PATH, USER_ADD_PATH, USER_PATH, USER_SEARCH_PATH} from './constant/routePath'
 
 
 function App() {
