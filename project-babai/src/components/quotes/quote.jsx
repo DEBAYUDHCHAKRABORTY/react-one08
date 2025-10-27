@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
-
-import { useNavigate } from "react-router-dom";
-import { getAllQuotes } from "../../services/api";
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-
+import {useEffect, useState} from "react";
+import {getAllQuotes} from "../../services/api";
+import {DataTable} from 'primereact/datatable';
+import {Column} from 'primereact/column';
 
 
 function Card({ quote }) {
@@ -18,7 +15,6 @@ function Card({ quote }) {
 
 export default function Quotes() {
     const [data, setData] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const gettingData = async () => {
@@ -28,11 +24,6 @@ export default function Quotes() {
         gettingData();
 
     }, []);
-
-    function handleClick(id) {
-        console.log("Clicked on the row no. " + id)
-        navigate(`/quotes/${id}`);
-    }
 
     return (
         <div >
@@ -46,30 +37,6 @@ export default function Quotes() {
                         <Column field="author" sortable header="Author"></Column>
                     </DataTable>
                 </div>
-
-
-                // <>
-                //     <table className="table">
-                //         <thead>
-                //             <tr id="heading">
-                //                 <th> Id </th>
-                //                 <th> Quote </th>
-                //                 <th> Author </th>
-                //             </tr>
-                //         </thead>
-
-                //         <tbody>
-                //             {data.map((itm, idx) => (
-                //                 <tr key={idx} onClick={() => handleClick(itm.id)}>
-                //                     <td>{idx + 1}</td>
-                //                     <td>{itm.quote}</td>
-                //                     <td>{itm.author}</td>
-                //                 </tr>
-
-                //             ))}
-                //         </tbody>
-                //     </table>
-                // </>
             )}
         </div>
     );
