@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { InputText } from "primereact/inputtext";
 import { RadioButton } from "primereact/radiobutton";
 import { FloatLabel } from "primereact/floatlabel";
@@ -10,8 +10,9 @@ import { Button } from 'primereact/button';
 
 
 
-export default function Adduser() {
+export default function Adduser({ data }) {
     const [dates, setDates] = useState(null);
+    const [update, setUpdate] = useState(false);
     const [form, setForm] = useState({
         name: "",
         username: "",
@@ -23,6 +24,13 @@ export default function Adduser() {
         city: "",
         country: "",
     });
+
+    useEffect(() => {
+        if (data) {
+            setUpdate(true);
+            setForm(prevForm => ({ ...prevForm, ...data }));
+        }
+    }, [])
     const cities = [
         { name: 'New York', code: 'NY' },
         { name: 'Rome', code: 'RM' },
@@ -43,9 +51,9 @@ export default function Adduser() {
     return (
         <>
             <div className="bg-yellow-100 flex-col justify-center w-200 h-180 ">
-                    <div className="my-8 ">
-                        {JSON.stringify(form)}
-                    </div>
+                <div className="my-8 ">
+                    {JSON.stringify(form)}
+                </div>
                 <div className="flex-col justify-center w-80 mx-auto">
 
                     <div className="card my-6">
@@ -97,7 +105,7 @@ export default function Adduser() {
                         </FloatLabel>
                     </div>
                     <div className="card flex-wrap gap-3 my-6 flex justify-center">
-                        <Button label="Submit" icon="pi pi-check" onChange={(e) => handleChange("submit", e.target.value)} className="p-inputtext-sm " />
+                        <Button label={update ? "Update": "Submit"} icon="pi pi-check" onChange={(e) => handleChange("submit", e.target.value)} className="p-inputtext-sm " />
                     </div>
                 </div>
             </div>

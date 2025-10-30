@@ -12,6 +12,3 @@ export const conform1UserById = (id) => http.conform1(`/users/delete/${id}`)
 
 export const searchUser = (userName) => http.get(`/users/search/${userName}`)
 
-
-
-export const deleteUserById = (id) => http.delete(`/users/${id}`)

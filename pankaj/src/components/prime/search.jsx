@@ -5,31 +5,31 @@ import { useState } from "react";
 import { searchUser } from "../../services/api";
 
 export default function Search() {
-     const [searchTerm, setSearchTerm] = useState("");
-     const [searchResult, setSearchResult] = useState([]);
-      async function handleInputChange(e) {
-             setSearchTerm(e.target.value)
-             try {
-                 const response = await searchUser(e.target.value);
-                 if (response.status === 200) {
-                     setSearchResult(response.data)
-                 }
-             } catch (e) {
-                 console.log(err)
-             }
-         }
-           async function handleSearch(e) {
-                 console.log("Searching users by name " + searchTerm);
-         
-                 try {
-                     const response = await searchUser(searchTerm);
-                     if (response.status === 200) {
-                         setSearchResult(response.data)
-                     }
-                 } catch (e) {
-                     console.log(err)
-                 }
-             }
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResult, setSearchResult] = useState([]);
+    async function handleInputChange(e) {
+        setSearchTerm(e.target.value)
+        try {
+            const response = await searchUser(e.target.value);
+            if (response.status === 200) {
+                setSearchResult(response.data)
+            }
+        } catch (e) {
+            console.log(err)
+        }
+    }
+    async function handleSearch(e) {
+        console.log("Searching users by name " + searchTerm);
+
+        try {
+            const response = await searchUser(searchTerm);
+            if (response.status === 200) {
+                setSearchResult(response.data)
+            }
+        } catch (e) {
+            console.log(err)
+        }
+    }
 
     return (
         <div className="bg-amber-500">
@@ -45,21 +45,7 @@ export default function Search() {
                     <Column field="country" header="Country"></Column>
                 </DataTable>
             </div>
-
-import { Button } from "primereact/button";
-import { InputText } from "primereact/inputtext";
-
-export default function Search() {
-
-    return (
-        <div>
-            <h1 className="text-2xl">Display a Search Field</h1>
-            <label  > Search Google</label>
-            <div className="my-2">
-                <InputText />
-            </div>
-            <Button>Submit</Button>
-
         </div>
+
     )
 }
